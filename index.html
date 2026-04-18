@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craton Labs — Compliance-Ready AI for Professional Services</title>
+    <meta name="description" content="Building compliance-ready AI infrastructure for professional services firms in India and Europe.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        :root {
+            --charcoal: #3D3D3D;
+            --stone: #7D7D7D;
+            --sage: #84A98C;
+            --teal: #5F9EA0;
+            --ochre: #C9A27E;
+            --cream: #F5F3EF;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            padding: 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--charcoal);
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--stone);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--charcoal);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            color: var(--charcoal);
+        }
+        
+        .hero h1 span {
+            color: var(--teal);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--stone);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #2a2a2a;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--stone);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--charcoal);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .feature {
+            padding: 32px;
+            border-radius: 12px;
+            background: var(--cream);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--teal);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: var(--stone);
+        }
+        
+        /* Markets */
+        .markets {
+            padding: 100px 0;
+        }
+        
+        .markets h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -1px;
+        }
+        
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        
+        .market-card {
+            padding: 40px;
+            border-radius: 16px;
+            background: var(--white);
+            border: 1px solid #E8E6E1;
+        }
+        
+        .market-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+        
+        .market-card p {
+            color: var(--stone);
+            margin-bottom: 20px;
+        }
+        
+        .market-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--sage);
+            color: var(--white);
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .contact p {
+            color: var(--stone);
+            margin-bottom: 32px;
+        }
+        
+        .contact a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            color: var(--stone);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .markets-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#3D3D3D"/>
+                    <path d="M12 28L20 12L28 28H22L20 22L18 28H12Z" fill="#5F9EA0"/>
+                    <rect x="18" y="22" width="4" height="6" fill="#5F9EA0"/>
+                </svg>
+                <span class="logo-text">Craton Labs</span>
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#markets">Markets</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>The AI Foundation for<br><span>Professional Services</span></h1>
+            <p>Compliance-ready AI infrastructure built for regulated firms in India and Europe. Data sovereign, audit-ready, enterprise-grade.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="https://github.com/CratonLabs/docs" target="_blank" class="btn btn-secondary">Documentation</a>
+            </div>
+        </section>
+    </div>
+    
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l6.9 3.45L12 11.09 5.1 7.63 12 4.18zM4 8.82l7 3.5v7.36l-7-3.5V8.82zm9 10.86v-7.36l7-3.5v7.36l-7 3.5z"/></svg>
+                    </div>
+                    <h3>Compliance-First</h3>
+                    <p>GDPR, DPDP, DORA, EU AI Act ready. Data residency controls, audit trails, and role-based access built in from day one.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h3>Document Intelligence</h3>
+                    <p>Process contracts, regulatory filings, and due diligence documents with precision. Multi-language, multi-format support.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Data Sovereignty</h3>
+                    <p>Deploy on-premise or in your VPC. AWS eu-central-1 (Frankfurt) for EU, ap-south-1 (Mumbai) for India. Your data never leaves your infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="markets" id="markets">
+        <div class="container">
+            <h2>Target Markets</h2>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <h3>🇪🇺 European Union</h3>
+                    <p>Financial services, legal, and consulting firms requiring DORA, GDPR, and EU AI Act compliance.</p>
+                    <span class="market-tag">Primary Market</span>
+                </div>
+                <div class="market-card">
+                    <h3>🇮🇳 India</h3>
+                    <p>Chartered accounting firms, NBFCs, and SEBI-registered advisors needing DPDP and regulatory compliance.</p>
+                    <span class="market-tag">Secondary Market</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Building the Future of Professional Services</h2>
+            <p>We're currently in stealth mode. <a href="mailto:hello@craton-labs.com">Get in touch</a> to learn more.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Craton Labs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
