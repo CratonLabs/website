@@ -1,30 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
-  <!-- App Icon — Square with rounded corners (for app stores) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 84" width="100" height="84">
+  <!-- Icon-only mark for favicons, avatars, app icons -->
   
-  <defs>
-    <linearGradient id="appBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3D3D3D"/>
-      <stop offset="100%" stop-color="#2D2D2D"/>
-    </linearGradient>
-  </defs>
-  
-  <!-- App icon background -->
-  <rect x="0" y="0" width="180" height="180" rx="36" ry="36" fill="url(#appBg)"/>
-  
-  <!-- Logo mark centered -->
-  <g transform="translate(40, 35) scale(1)">
-    <path fill="#5F9EA0" d="M0,16 L25,8 L75,22 L100,12 L100,28 L75,36 L45,24 L0,24 Z" />
-    <path fill="#84A98C" d="M0,28 L45,28 L75,40 L100,32 L100,46 L0,46 Z" />
-    <rect fill="#7D7D7D" x="0" y="50" width="100" height="14" />
-    <rect fill="#3D3D3D" x="0" y="68" width="100" height="14" />
-  </g>
-  
-  <!-- Optional: "CL" text at bottom for clarity at small sizes -->
-  <text x="90" y="155" 
-        font-family="Georgia, serif" 
-        font-size="18" 
-        font-weight="700" 
-        fill="#FFFFFF" 
-        text-anchor="middle" 
-        opacity="0.6">CL</text>
+  <!-- All four geological layers with brand colors -->
+  <path fill="#5F9EA0" d="M0,16 L25,8 L75,22 L100,12 L100,28 L75,36 L45,24 L0,24 Z" />
+  <path fill="#84A98C" d="M0,28 L45,28 L75,40 L100,32 L100,46 L0,46 Z" />
+  <rect fill="#7D7D7D" x="0" y="50" width="100" height="14" />
+  <rect fill="#3D3D3D" x="0" y="68" width="100" height="14" />
 </svg>
