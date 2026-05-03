@@ -3,1934 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craton Labs — Compliance-Ready AI for Professional Services</title>
-    <meta name="description" content="Building compliance-ready AI infrastructure for professional services firms in India and Europe.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --charcoal: #3D3D3D;
-            --stone: #7D7D7D;
-            --sage: #84A98C;
-            --teal: #5F9EA0;
-            --teal-light: #7FB8BA;
-            --ochre: #C9A27E;
-            --cream: #F5F3EF;
-            --cream-dark: #E8E4DB;
-            --white: #FFFFFF;
-            
-            --shadow-light: 8px 8px 16px rgba(163, 163, 163, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.8);
-            --shadow-inner: inset 4px 4px 8px rgba(163, 163, 163, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.6);
-            --shadow-float: 12px 12px 24px rgba(163, 163, 163, 0.35), -12px -12px 24px rgba(255, 255, 255, 0.7);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--cream);
-            color: var(--charcoal);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(95, 158, 160, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(132, 169, 140, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(201, 162, 126, 0.05) 0%, transparent 70%);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--stone);
-            font-size: 18px;
-            margin-top: -40px;
-            margin-bottom: 48px;
-        }
-        
-        /* Header */
-        header {
-            padding: 32px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: var(--charcoal);
-        }
-        
-        .logo-mark {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(145deg, var(--charcoal), #2a2a2a);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 6px 6px 12px rgba(163, 163, 163, 0.4), -6px -6px 12px rgba(255, 255, 255, 0.7);
-        }
-        
-        .logo-mark svg {
-            width: 28px;
-            height: 28px;
-        }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        
-        .logo-text span {
-            color: var(--teal);
-        }
-        
-        nav {
-            display: flex;
-            gap: 40px;
-            background: var(--cream);
-            padding: 16px 32px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-light);
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--stone);
-            font-size: 15px;
-            font-weight: 500;
-            transition: all 0.2s;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--charcoal);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--teal);
-            border-radius: 2px;
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero */
-        .hero {
-            padding: 80px 0 120px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(95, 158, 160, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--cream);
-            border-radius: 50px;
-            box-shadow: var(--shadow-inner);
-            font-size: 13px;
-            color: var(--stone);
-            margin-bottom: 32px;
-        }
-        
-        .hero-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--sage);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .hero h1 {
-            font-size: 64px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 28px;
-            color: var(--charcoal);
-            line-height: 1.1;
-        }
-        
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--teal), var(--sage));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: var(--stone);
-            max-width: 640px;
-            margin: 0 auto 48px;
-            font-weight: 400;
-        }
-        
-        .cta-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 18px 32px;
-            border-radius: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(145deg, var(--charcoal), #2a2a2a);
-            color: var(--white);
-            box-shadow: 6px 6px 16px rgba(163, 163, 163, 0.4), -4px -4px 12px rgba(255, 255, 255, 0.6);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 10px 10px 24px rgba(163, 163, 163, 0.5), -6px -6px 16px rgba(255, 255, 255, 0.7);
-        }
-        
-        .btn-primary::after {
-            content: '→';
-            transition: transform 0.3s;
-        }
-        
-        .btn-primary:hover::after {
-            transform: translateX(4px);
-        }
-        
-        .btn-secondary {
-            background: var(--cream);
-            color: var(--charcoal);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        /* Floating shapes */
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-        
-        .shape-1 {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--teal), var(--teal-light));
-            top: 20%;
-            left: 10%;
-            box-shadow: var(--shadow-float);
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .shape-2 {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--ochre), #d4b08c);
-            top: 40%;
-            right: 15%;
-            box-shadow: var(--shadow-light);
-            animation: float 6s ease-in-out infinite reverse;
-        }
-        
-        .shape-3 {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--sage), #9dbaa5);
-            bottom: 20%;
-            left: 20%;
-            box-shadow: var(--shadow-light);
-            animation: float 7s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-        
-        /* Vision */
-        .vision {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .vision-card {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 48px;
-            background: var(--cream);
-            border-radius: 32px;
-            box-shadow: var(--shadow-float);
-            text-align: center;
-            position: relative;
-            border: 2px solid transparent;
-            background-image: linear-gradient(var(--cream), var(--cream)), linear-gradient(135deg, var(--teal), var(--sage));
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-        }
-        
-        .vision-card h2 {
-            font-size: 36px;
-            margin-bottom: 24px;
-            color: var(--charcoal);
-        }
-        
-        .vision-tagline {
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--teal);
-            font-style: italic;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-        
-        .vision-card p {
-            font-size: 17px;
-            color: var(--stone);
-            line-height: 1.8;
-        }
-        
-        /* Features */
-        .features {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .features h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .feature {
-            padding: 40px 32px;
-            text-align: center;
-            background: var(--cream);
-            border-radius: 24px;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .feature-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 24px;
-            background: linear-gradient(145deg, var(--cream), var(--cream-dark));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-inner);
-        }
-        
-        .feature-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: var(--teal);
-        }
-        
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 14px;
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-        
-        .feature p {
-            font-size: 15px;
-            color: var(--stone);
-            line-height: 1.7;
-        }
-        
-        /* Products */
-        .products {
-            padding: 100px 0;
-        }
-        
-        .products h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .product-card {
-            padding: 36px;
-            background: var(--cream);
-            border-radius: 24px;
-            box-shadow: var(--shadow-light);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--teal), var(--sage));
-            border-radius: 24px 24px 0 0;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .product-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--cream);
-            border-radius: 20px;
-            box-shadow: var(--shadow-inner);
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--teal);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .product-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: var(--charcoal);
-        }
-        
-        .product-card p {
-            font-size: 14px;
-            color: var(--stone);
-            margin-bottom: 20px;
-        }
-        
-        .product-link {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--teal);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .product-link:hover {
-            gap: 10px;
-        }
-        
-        /* Product Demos */
-        .demos {
-            padding: 100px 0;
-            background: var(--cream);
-            position: relative;
-        }
-        
-        .demos::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(95, 158, 160, 0.06) 0%, transparent 50%);
-        }
-        
-        .demos h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-            position: relative;
-        }
-        
-        .demo-section {
-            margin-bottom: 80px;
-            position: relative;
-        }
-        
-        .demo-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .demo-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 32px;
-        }
-        
-        .demo-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(145deg, var(--teal), var(--teal-light));
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--white);
-            box-shadow: 4px 4px 8px rgba(95, 158, 160, 0.3);
-        }
-        
-        .demo-header h3 {
-            font-size: 28px;
-            color: var(--charcoal);
-        }
-        
-        .demo-tag {
-            font-size: 14px;
-            color: var(--stone);
-        }
-        
-        .demo-interface {
-            background: var(--white);
-            border-radius: 24px;
-            box-shadow: var(--shadow-float);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .demo-topbar {
-            background: linear-gradient(135deg, #2a2a2a, #3d3d3d);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .demo-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .demo-dot-red { background: #ff5f56; }
-        .demo-dot-yellow { background: #ffbd2e; }
-        .demo-dot-green { background: #27c93f; }
-        
-        .demo-url {
-            margin-left: 16px;
-            background: rgba(255,255,255,0.1);
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-size: 12px;
-            color: rgba(255,255,255,0.6);
-        }
-        
-        .demo-content {
-            padding: 32px;
-        }
-        
-        /* Keystone Demo */
-        .search-box {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        
-        .search-input {
-            flex: 1;
-            padding: 18px 24px;
-            border: 2px solid #E8E6E1;
-            border-radius: 16px;
-            font-size: 16px;
-            font-family: inherit;
-            background: var(--cream);
-            box-shadow: var(--shadow-inner);
-            transition: all 0.3s;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--teal);
-        }
-        
-        .search-btn {
-            padding: 18px 32px;
-            background: linear-gradient(145deg, var(--teal), var(--teal-light));
-            color: var(--white);
-            border: none;
-            border-radius: 16px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 4px 4px 12px rgba(95, 158, 160, 0.3);
-        }
-        
-        .search-results {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        .result-card {
-            padding: 20px;
-            background: var(--cream);
-            border-radius: 16px;
-            border-left: 4px solid var(--teal);
-            transition: all 0.3s;
-        }
-        
-        .result-card:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .result-title {
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .result-score {
-            font-size: 12px;
-            background: var(--sage);
-            color: var(--white);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        
-        .result-snippet {
-            font-size: 14px;
-            color: var(--stone);
-            line-height: 1.6;
-        }
-        
-        .result-meta {
-            margin-top: 12px;
-            font-size: 12px;
-            color: var(--stone);
-        }
-        
-        /* Atlas Demo */
-        .drop-zone {
-            border: 3px dashed #E8E6E1;
-            border-radius: 24px;
-            padding: 60px;
-            text-align: center;
-            transition: all 0.3s;
-            background: var(--cream);
-        }
-        
-        .drop-zone:hover {
-            border-color: var(--teal);
-            background: rgba(95, 158, 160, 0.05);
-        }
-        
-        .drop-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: linear-gradient(145deg, var(--cream), var(--cream-dark));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-inner);
-        }
-        
-        .drop-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: var(--teal);
-        }
-        
-        .drop-zone h4 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: var(--charcoal);
-        }
-        
-        .drop-zone p {
-            color: var(--stone);
-            font-size: 14px;
-        }
-        
-        .processing-bar {
-            margin-top: 24px;
-            background: #E8E6E1;
-            border-radius: 8px;
-            height: 8px;
-            overflow: hidden;
-        }
-        
-        .processing-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--teal), var(--sage));
-            width: 0%;
-            animation: processing 2s ease-in-out infinite;
-        }
-        
-        @keyframes processing {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        
-        .analysis-results {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 24px;
-        }
-        
-        .analysis-card {
-            padding: 20px;
-            background: var(--cream);
-            border-radius: 16px;
-            text-align: center;
-        }
-        
-        .analysis-card h5 {
-            font-size: 14px;
-            color: var(--stone);
-            margin-bottom: 8px;
-        }
-        
-        .analysis-card .count {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--teal);
-        }
-        
-        .analysis-card .label {
-            font-size: 12px;
-            color: var(--stone);
-        }
-        
-        /* Nexus Demo */
-        .alert-card {
-            background: linear-gradient(135deg, #fef3e2, #fde8d0);
-            border-radius: 20px;
-            padding: 28px;
-            border-left: 5px solid var(--ochre);
-            margin-bottom: 20px;
-        }
-        
-        .alert-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .alert-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--ochre);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .alert-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--white);
-        }
-        
-        .alert-badge {
-            font-size: 11px;
-            background: var(--ochre);
-            color: var(--white);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        
-        .alert-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-        }
-        
-        .alert-impact {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 16px;
-        }
-        
-        .alert-impact h5 {
-            font-size: 14px;
-            color: var(--stone);
-            margin-bottom: 8px;
-        }
-        
-        .alert-impact p {
-            font-size: 15px;
-            color: var(--charcoal);
-            font-weight: 500;
-        }
-        
-        .alert-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        
-        .alert-action {
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .alert-action-primary {
-            background: var(--charcoal);
-            color: var(--white);
-        }
-        
-        .alert-action-secondary {
-            background: var(--cream);
-            color: var(--charcoal);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .alert-action:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* Team */
-        .team {
-            padding: 100px 0;
-        }
-        
-        .team h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .team-card {
-            padding: 40px;
-            background: var(--cream);
-            border-radius: 24px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .team-photo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 24px;
-            background: linear-gradient(145deg, var(--cream), var(--cream-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-inner);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .team-photo svg {
-            width: 80px;
-            height: 80px;
-            fill: var(--stone);
-            opacity: 0.5;
-        }
-        
-        .team-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            color: var(--charcoal);
-        }
-        
-        .team-role {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--teal);
-            color: var(--white);
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 20px;
-            margin-bottom: 16px;
-        }
-        
-        .team-card p {
-            font-size: 14px;
-            color: var(--stone);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .team-tags {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .team-tag {
-            padding: 6px 14px;
-            background: var(--cream);
-            border-radius: 20px;
-            font-size: 12px;
-            color: var(--stone);
-            box-shadow: var(--shadow-inner);
-        }
-        
-        /* Roadmap */
-        .roadmap {
-            padding: 100px 0;
-            background: var(--cream);
-            position: relative;
-        }
-        
-        .roadmap::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(132, 169, 140, 0.06) 0%, transparent 50%);
-        }
-        
-        .roadmap h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 80px;
-            letter-spacing: -1px;
-            position: relative;
-        }
-        
-        .timeline {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--teal), var(--sage), var(--ochre));
-            border-radius: 3px;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 72px;
-            padding-bottom: 48px;
-        }
-        
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        
-        .timeline-marker {
-            position: absolute;
-            left: 12px;
-            top: 0;
-            width: 28px;
-            height: 28px;
-            background: var(--cream);
-            border: 3px solid var(--teal);
-            border-radius: 50%;
-            box-shadow: var(--shadow-light);
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(2) .timeline-marker { border-color: var(--sage); }
-        .timeline-item:nth-child(3) .timeline-marker { border-color: var(--ochre); }
-        .timeline-item:nth-child(4) .timeline-marker { border-color: var(--teal); }
-        
-        .timeline-date {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--teal);
-            color: var(--white);
-            font-size: 12px;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-bottom: 12px;
-        }
-        
-        .timeline-item:nth-child(2) .timeline-date { background: var(--sage); }
-        .timeline-item:nth-child(3) .timeline-date { background: var(--ochre); }
-        
-        .timeline-item h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: var(--charcoal);
-        }
-        
-        .timeline-item p {
-            font-size: 14px;
-            color: var(--stone);
-        }
-        
-        /* Markets */
-        .markets {
-            padding: 100px 0;
-            background: var(--cream);
-            position: relative;
-        }
-        
-        .markets::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 10% 90%, rgba(132, 169, 140, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 10%, rgba(95, 158, 160, 0.08) 0%, transparent 40%);
-        }
-        
-        .markets h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 48px;
-            letter-spacing: -1px;
-            position: relative;
-        }
-        
-        .markets-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            position: relative;
-        }
-        
-        .market-card {
-            padding: 40px;
-            background: var(--cream);
-            border-radius: 24px;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .market-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .market-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: var(--charcoal);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .market-card p {
-            color: var(--stone);
-            margin-bottom: 24px;
-            font-size: 15px;
-        }
-        
-        .market-tag {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(145deg, var(--sage), #9dbaa5);
-            color: var(--white);
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 12px;
-            box-shadow: 4px 4px 8px rgba(132, 169, 140, 0.3);
-        }
-        
-        /* Blog */
-        .blog {
-            padding: 100px 0;
-        }
-        
-        .blog h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-        }
-        
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .blog-card {
-            padding: 36px;
-            background: var(--cream);
-            border-radius: 24px;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .blog-card.coming-soon {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 280px;
-        }
-        
-        .blog-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--teal);
-            color: var(--white);
-            font-size: 11px;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
-        
-        .blog-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--charcoal);
-        }
-        
-        .blog-card p {
-            font-size: 14px;
-            color: var(--stone);
-            line-height: 1.6;
-        }
-        
-        .blog-cta {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 16px;
-            color: var(--teal);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .blog-cta:hover {
-            color: var(--charcoal);
-        }
-        
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: var(--cream);
-            position: relative;
-        }
-        
-        .faq::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(201, 162, 126, 0.06) 0%, transparent 50%);
-        }
-        
-        .faq h2 {
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 60px;
-            letter-spacing: -1px;
-            position: relative;
-        }
-        
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .faq-item {
-            background: var(--cream);
-            border-radius: 20px;
-            box-shadow: var(--shadow-light);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            box-shadow: var(--shadow-float);
-        }
-        
-        .faq-question {
-            padding: 24px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-        
-        .faq-icon {
-            width: 28px;
-            height: 28px;
-            background: var(--teal);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-        }
-        
-        .faq-icon svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--white);
-        }
-        
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0 32px;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 32px 24px;
-        }
-        
-        .faq-answer p {
-            font-size: 15px;
-            color: var(--stone);
-            line-height: 1.7;
-        }
-        
-        /* Contact */
-        .contact {
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .contact-card {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 60px 48px;
-            background: var(--cream);
-            border-radius: 32px;
-            box-shadow: var(--shadow-float);
-            position: relative;
-        }
-        
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(145deg, var(--teal), var(--teal-light));
-            border-radius: 24px;
-            box-shadow: var(--shadow-float);
-        }
-        
-        .contact h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            margin-top: 16px;
-        }
-        
-        .contact p {
-            color: var(--stone);
-            margin-bottom: 32px;
-            font-size: 17px;
-        }
-        
-        .contact a {
-            color: var(--teal);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-        }
-        
-        .contact a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--teal);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        
-        .contact a:hover::after {
-            transform: scaleX(1);
-        }
-        
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: var(--stone);
-            font-size: 14px;
-            position: relative;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--cream-dark), transparent);
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--cream);
-            border-radius: 14px;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-float);
-        }
-        
-        .social-links svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--stone);
-        }
-        
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .features-grid,
-            .products-grid,
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .analysis-results {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 40px;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .features-grid,
-            .products-grid,
-            .markets-grid,
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .shape {
-                display: none;
-            }
-            
-            .hero {
-                padding: 60px 0 80px;
-            }
-            
-            .search-box {
-                flex-direction: column;
-            }
-            
-            .alert-actions {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Craton Labs — Compliance-Ready AI for BFSI Professional Services</title>
+    <meta name="description" content="Atlas reads your documents. Compass watches the regulators. You focus on the client. Built for boutique BFSI consultancies in India.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-    
-    <div class="container">
-        <header>
-            <a href="/" class="logo">
-                <div class="logo-mark">
-                    <svg viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 10L16 5L48 14L64 8V18L48 24L28 16L0 16V10Z" fill="#5F9EA0"/>
-                        <path d="M0 18L28 18L48 26L64 20V30L0 30V18Z" fill="#84A98C"/>
-                        <rect x="0" y="32" width="64" height="10" fill="#7D7D7D"/>
-                        <rect x="0" y="44" width="64" height="10" fill="#3D3D3D"/>
-                    </svg>
-                </div>
-                <span class="logo-text">Craton <span>Labs</span></span>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Craton</span>
+                <span class="logo-tagline">Labs</span>
             </a>
-            <nav>
-                <a href="#products">Products</a>
-                <a href="#team">Team</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
-        
-        <section class="hero">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#problem" class="nav-link">Problem</a>
+                <a href="#how-it-works" class="nav-link">Solution</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#contact" class="btn btn-primary nav-cta">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-container">
             <div class="hero-content">
-                <div class="hero-badge">Building in stealth mode</div>
-                <h1>The AI Foundation for<br><span>Professional Services</span></h1>
-                <p>Compliance-ready AI infrastructure built for regulated firms in India and Europe. Data sovereign, audit-ready, enterprise-grade.</p>
-                <div class="cta-group">
-                    <a href="#contact" class="btn btn-primary">Get Early Access</a>
-                    <a href="https://github.com/CratonLabs/docs" target="_blank" class="btn btn-secondary">Documentation</a>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <section class="vision" id="vision">
-        <div class="container">
-            <div class="vision-card">
-                <h2>The Future of Professional Services</h2>
-                <p class="vision-tagline">"Spreadsheets didn't replace accountants — they made them more powerful."</p>
-                <p>Craton Labs is building that same transformation: the AI layer that eliminates manual overhead without replacing the professional. Like Veeva built on Salesforce for pharma, we build compliance-native AI for regulated services. We believe the future isn't about AI replacing experts — it's about AI handling the repetitive work so professionals can focus on what matters most.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="features">
-        <div class="container">
-            <h2>Why Craton Labs</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l6.9 3.45L12 11.09 5.1 7.63 12 4.18zM4 8.82l7 3.5v7.36l-7-3.5V8.82zm9 10.86v-7.36l7-3.5v7.36l-7 3.5z"/></svg>
-                    </div>
-                    <h3>Compliance-First</h3>
-                    <p>GDPR, DPDP, DORA, EU AI Act ready. Audit trails, role-based access, and data residency controls built in from day one.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    </div>
-                    <h3>Document Intelligence</h3>
-                    <p>Process contracts, filings, and due diligence documents with precision. Multi-language, multi-format support.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <h3>Data Sovereignty</h3>
-                    <p>Deploy on-premise or in your VPC. AWS eu-central-1 for EU, ap-south-1 for India. Your data never leaves your infrastructure.</p>
+                <h1 class="hero-title">Compliance-Ready AI for BFSI Professional Services</h1>
+                <p class="hero-subtitle">Atlas reads your documents. Compass watches the regulators. You focus on the client.</p>
+                <div class="hero-cta-group">
+                    <a href="#atlas" class="btn btn-primary btn-lg">Explore Atlas</a>
+                    <a href="#compass" class="btn btn-secondary btn-lg">Explore Compass</a>
                 </div>
             </div>
         </div>
+        <div class="hero-scroll">
+            <a href="#problem" class="scroll-indicator" aria-label="Scroll to learn more">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+                </svg>
+            </a>
+        </div>
     </section>
-    
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Boutique Consultancies Spend 40% of Time on Regulatory Research</h2>
+                <p class="section-subtitle">Manual document search is draining your margins and slowing your client response times.</p>
+            </div>
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="pain-point-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10,9 9,9 8,9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="pain-point-title">Document Chaos</h3>
+                    <p class="pain-point-text">Hundreds of RBI circulars, SEBI notifications, client documents — scattered across drives</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-point-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12,6 12,12 16,14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="pain-point-title">Hours Wasted</h3>
+                    <p class="pain-point-text">Analysts spend 3-4 hours finding the right regulation for a single client question</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-point-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="pain-point-title">Competitive Gap</h3>
+                    <p class="pain-point-text">Big 4 have proprietary tools. You have Ctrl+F and hope.</p>
+                </div>
+            </div>
+            <div class="stat-highlight">
+                <div class="stat-value">₹2.5L</div>
+                <div class="stat-label">per analyst per year — wasted on manual document search</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2>Products</h2>
-            <p class="section-subtitle">Three products, one compliance-ready engine</p>
+            <div class="section-header">
+                <h2 class="section-title">Built for Boutique BFSI Consultancies</h2>
+                <p class="section-subtitle">Two products. One mission: Cut your compliance research time by 90%.</p>
+            </div>
             <div class="products-grid">
-                <div class="product-card">
-                    <span class="product-tag">Coming Soon</span>
-                    <h3>Keystone</h3>
-                    <p>Private knowledge base for professional services firms. Search and query your firm's entire document history.</p>
-                    <a href="#" class="product-link">Learn more →</a>
+                <!-- Atlas Card -->
+                <div class="product-card" id="atlas">
+                    <div class="product-header">
+                        <div class="product-icon product-icon--atlas">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="product-name">Atlas</h3>
+                        <p class="product-tagline">Document RAG for your firm's knowledge</p>
+                    </div>
+                    <ul class="product-features">
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Upload documents, query in plain English</span>
+                        </li>
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Role-based views: Partner sees summary, Analyst sees detail</span>
+                        </li>
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Every answer cites its source</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="product-link">Learn More →</a>
                 </div>
-                <div class="product-card">
-                    <span class="product-tag">Coming Soon</span>
-                    <h3>Atlas</h3>
-                    <p>Due diligence automation workspace. AI-powered document analysis for M&A transactions.</p>
-                    <a href="#" class="product-link">Learn more →</a>
-                </div>
-                <div class="product-card">
-                    <span class="product-tag">Coming Soon</span>
-                    <h3>Nexus</h3>
-                    <p>Regulatory intelligence platform. Monitor RBI, SEBI, DORA, GDPR changes automatically.</p>
-                    <a href="#" class="product-link">Learn more →</a>
+
+                <!-- Compass Card -->
+                <div class="product-card" id="compass">
+                    <div class="product-header">
+                        <div class="product-icon product-icon--compass">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="product-name">Compass</h3>
+                        <p class="product-tagline">Regulatory intelligence that watches so you don't have to</p>
+                    </div>
+                    <ul class="product-features">
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Auto-monitors RBI, SEBI, IRDAI, PFRDA</span>
+                        </li>
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>AI summaries of new regulations</span>
+                        </li>
+                        <li class="product-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Maps impact to your specific clients</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="product-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="demos" id="demos">
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <h2>See It In Action</h2>
-            
-            <div class="demo-section">
-                <div class="demo-header">
-                    <div class="demo-number">1</div>
-                    <div>
-                        <h3>Keystone</h3>
-                        <span class="demo-tag">Private Knowledge Base</span>
-                    </div>
-                </div>
-                <div class="demo-interface">
-                    <div class="demo-topbar">
-                        <span class="demo-dot demo-dot-red"></span>
-                        <span class="demo-dot demo-dot-yellow"></span>
-                        <span class="demo-dot demo-dot-green"></span>
-                        <span class="demo-url">app.craton-labs.com/keystone</span>
-                    </div>
-                    <div class="demo-content">
-                        <div class="search-box">
-                            <input type="text" class="search-input" placeholder="Ask anything about your firm's knowledge..." value="Have we done a project similar to this NBFC audit before?">
-                            <button class="search-btn">Search</button>
-                        </div>
-                        <div class="search-results">
-                            <div class="result-card">
-                                <div class="result-title">
-                                    NBFC Due Diligence Report - ABC Finance Ltd
-                                    <span class="result-score">94%</span>
-                                </div>
-                                <p class="result-snippet">Completed a comprehensive NBFC audit in Q3 2025 covering asset-liability management, capital adequacy, and regulatory compliance under RBI guidelines.</p>
-                                <div class="result-meta">📄 Project Report • 📅 September 2025 • 👤 Partner Singh</div>
-                            </div>
-                            <div class="result-card">
-                                <div class="result-title">
-                                    NBFC Compliance Review - XYZ Capital
-                                    <span class="result-score">87%</span>
-                                </div>
-                                <p class="result-snippet">Regulatory compliance assessment for NBFC operations including DPDP Act readiness and RBI circular implementation.</p>
-                                <div class="result-meta">📄 Compliance Report • 📅 November 2025 • 👤 Partner Sharma</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">From scattered documents to actionable insights in three steps.</p>
             </div>
-            
-            <div class="demo-section">
-                <div class="demo-header">
-                    <div class="demo-number">2</div>
-                    <div>
-                        <h3>Atlas</h3>
-                        <span class="demo-tag">Due Diligence Automation</span>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17,8 12,3 7,8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
                     </div>
+                    <h3 class="step-title">Upload</h3>
+                    <p class="step-text">Drag and drop documents or connect to regulatory feeds</p>
                 </div>
-                <div class="demo-interface">
-                    <div class="demo-topbar">
-                        <span class="demo-dot demo-dot-red"></span>
-                        <span class="demo-dot demo-dot-yellow"></span>
-                        <span class="demo-dot demo-dot-green"></span>
-                        <span class="demo-url">app.craton-labs.com/atlas</span>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
                     </div>
-                    <div class="demo-content">
-                        <div class="drop-zone">
-                            <div class="drop-icon">
-                                <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
-                            </div>
-                            <h4>Drop your data room here</h4>
-                            <p>PDF, DOCX, XLSX up to 10,000 pages • AI analyzes automatically</p>
-                            <div class="processing-bar">
-                                <div class="processing-fill"></div>
-                            </div>
-                        </div>
-                        <div class="analysis-results">
-                            <div class="analysis-card">
-                                <h5>Documents</h5>
-                                <div class="count">247</div>
-                                <div class="label">processed</div>
-                            </div>
-                            <div class="analysis-card">
-                                <h5>Key Terms</h5>
-                                <div class="count">89</div>
-                                <div class="label">extracted</div>
-                            </div>
-                            <div class="analysis-card">
-                                <h5>Red Flags</h5>
-                                <div class="count">12</div>
-                                <div class="label">identified</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="step-title">Query</h3>
+                    <p class="step-text">Ask questions in natural language</p>
                 </div>
-            </div>
-            
-            <div class="demo-section">
-                <div class="demo-header">
-                    <div class="demo-number">3</div>
-                    <div>
-                        <h3>Nexus</h3>
-                        <span class="demo-tag">Regulatory Intelligence</span>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
                     </div>
-                </div>
-                <div class="demo-interface">
-                    <div class="demo-topbar">
-                        <span class="demo-dot demo-dot-red"></span>
-                        <span class="demo-dot demo-dot-yellow"></span>
-                        <span class="demo-dot demo-dot-green"></span>
-                        <span class="demo-url">app.craton-labs.com/nexus</span>
-                    </div>
-                    <div class="demo-content">
-                        <div class="alert-card">
-                            <div class="alert-header">
-                                <div class="alert-icon">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                                </div>
-                                <span class="alert-badge">RBI Circular</span>
-                            </div>
-                            <h4 class="alert-title">RBI issues new guidelines on NBFC loan provisioning requirements</h4>
-                            <div class="alert-impact">
-                                <h5>Impact on your portfolio</h5>
-                                <p>2 of your NBFC clients need to update their provisioning by Q2 2026</p>
-                            </div>
-                            <div class="alert-actions">
-                                <a href="#" class="alert-action alert-action-primary">View Details</a>
-                                <a href="#" class="alert-action alert-action-secondary">Notify Clients</a>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="step-title">Act</h3>
+                    <p class="step-text">Get cited answers, share findings, track compliance</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="team" id="team">
+
+    <!-- Traction Section -->
+    <section class="traction" id="traction">
         <div class="container">
-            <h2>Built by Domain Experts</h2>
-            <p class="section-subtitle">Deep expertise in AI, compliance, and professional services</p>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    </div>
-                    <h3>Utkarsh</h3>
-                    <span class="team-role">Founder & CEO</span>
-                    <p>MSc in AI & Data Science. Specializes in AI/ML, cloud infrastructure, and compliance architecture. Previously built enterprise systems for regulated industries.</p>
-                    <div class="team-tags">
-                        <span class="team-tag">AI/ML</span>
-                        <span class="team-tag">Cloud</span>
-                        <span class="team-tag">Compliance</span>
-                        <span class="team-tag">Python</span>
-                    </div>
+            <div class="section-header">
+                <h2 class="section-title">Built for Indian BFSI, by People Who Understand It</h2>
+                <p class="section-subtitle">We're building in public. Here's where we are today.</p>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">regulatory document chunks indexed</div>
                 </div>
-                <div class="team-card" style="opacity: 0.7;">
-                    <div class="team-photo">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                    </div>
-                    <h3>Join Our Team</h3>
-                    <span class="team-role">We're Hiring</span>
-                    <p>We're always looking for talented people who share our vision. If you're passionate about AI and compliance, we'd love to hear from you.</p>
-                    <div class="team-tags">
-                        <span class="team-tag">Full Stack</span>
-                        <span class="team-tag">ML Engineer</span>
-                        <span class="team-tag">Domain Expert</span>
-                    </div>
+                <div class="metric">
+                    <div class="metric-value">&lt;2s</div>
+                    <div class="metric-label">RAG query response time</div>
                 </div>
+                <div class="metric">
+                    <div class="metric-value">5</div>
+                    <div class="metric-label">pilot conversations with boutique consultancies</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <blockquote class="testimonial-quote">
+                    "Atlas reduced our regulatory research time from 4 hours to 15 minutes."
+                </blockquote>
+                <cite class="testimonial-author">— Partner, Mumbai-based NBFC consultancy</cite>
             </div>
         </div>
     </section>
-    
-    <section class="roadmap" id="roadmap">
+
+    <!-- Architecture Section -->
+    <section class="architecture" id="architecture">
         <div class="container">
-            <h2>What's Ahead</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <span class="timeline-date">Q2 2026</span>
-                    <h3>Design Partner Program</h3>
-                    <p>Onboard 3-5 design partners for product validation. Get real feedback from CA firms and NBFCs in India.</p>
+            <div class="section-header">
+                <h2 class="section-title">Enterprise-Grade from Day One</h2>
+                <p class="section-subtitle">Security and compliance aren't afterthoughts. They're built into our architecture.</p>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Data Residency</h3>
+                    <p class="trust-text">Everything stays in India (AWS ap-south-1)</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <span class="timeline-date">Q3 2026</span>
-                    <h3>Keystone Alpha</h3>
-                    <p>Private knowledge base MVP for CA firms. Enable document search across firm history with AI-powered relevance.</p>
+                <div class="trust-badge">
+                    <div class="trust-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">SOC2-Ready Architecture</h3>
+                    <p class="trust-text">Encryption at rest and in transit</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <span class="timeline-date">Q4 2026</span>
-                    <h3>First Paid Customers</h3>
-                    <p>Launch paid tiers in India market. Target: 5-10 paying customers by end of 2026.</p>
+                <div class="trust-badge">
+                    <div class="trust-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Row-Level Security</h3>
+                    <p class="trust-text">Multi-tenant, client data isolated</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <span class="timeline-date">Q1 2027</span>
-                    <h3>EU Expansion</h3>
-                    <p>DORA compliance product for EU financial services. First international market entry via Netherlands.</p>
+                <div class="trust-badge">
+                    <div class="trust-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Open-Core Engine</h3>
+                    <p class="trust-text">No vendor lock-in, audit the code</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="markets" id="markets">
-        <div class="container">
-            <h2>Target Markets</h2>
-            <div class="markets-grid">
-                <div class="market-card">
-                    <h3>🇪🇺 European Union</h3>
-                    <p>Financial services, legal, and consulting firms requiring DORA, GDPR, and EU AI Act compliance.</p>
-                    <span class="market-tag">Primary Market</span>
-                </div>
-                <div class="market-card">
-                    <h3>🇮🇳 India</h3>
-                    <p>Chartered accounting firms, NBFCs, and SEBI-registered advisors needing DPDP and regulatory compliance.</p>
-                    <span class="market-tag">Secondary Market</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="blog" id="blog">
-        <div class="container">
-            <h2>From the Lab</h2>
-            <p class="section-subtitle">Thoughts on AI, compliance, and the future of professional services</p>
-            <div class="blog-grid">
-                <div class="blog-card coming-soon">
-                    <span class="blog-tag">Coming Soon</span>
-                    <h3>Deep dives on the way</h3>
-                    <p>We'll be writing about AI compliance, regulatory changes, product updates, and insights from our journey building for regulated industries.</p>
-                </div>
-            </div>
-            <p class="blog-cta">Subscribe for updates →</p>
-        </div>
-    </section>
-    
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2>Questions Answered</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What does "compliance-ready" mean?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Everything we build has audit trails, role-based access, and data residency controls from day one. This isn't retrofitted — it's designed in from the ground up. Every document processed, every query made, every response generated is logged immutably for regulatory inspection.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Who is this for?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Mid-sized regulated firms in India and Europe — CA firms, NBFCs, asset managers, boutique law firms. These firms are too large for generic tools and too small to build custom AI solutions. They're exactly the segment that gets ignored by Big Tech but has real budget for compliance solutions.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Is my data safe?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Your data never leaves your infrastructure. Deploy on-premise or in your VPC. We offer AWS eu-central-1 (Frankfurt) for EU clients and AWS ap-south-1 (Mumbai) for India. We never train on your data — it's a contractual commitment, not just a promise.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How much does it cost?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Pricing starts at ₹8,000/month for Compliance Intelligence in India (Keystone/Nexus), and €800/month for EU markets. Atlas is priced per-engagement (₹30,000-50,000). Custom enterprise plans available for on-premise deployments. Design partner program is free for qualified firms.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I try before I buy?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes — we offer 60-day design partner programs for qualified firms. No cost, honest feedback in exchange for product shaping. It's how we build products that actually solve real problems. We learn from your use cases, you get early access to tools that fit your workflow.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What about EU AI Act?
-                        <div class="faq-icon">
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We monitor every regulatory update. Our products are designed to meet EU AI Act requirements for high-risk AI systems (financial services, legal services). When the full enforcement begins in August 2026, we'll be ready. This is a key differentiator — most AI vendors are scrambling to catch up.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
+    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-card">
-            <h2>Building the Future</h2>
-            <p>We're currently in stealth mode. <a href="mailto:hello@craton-labs.com">Get in touch</a> to learn more about our vision.</p>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <h2 class="contact-title">See Atlas in Action</h2>
+                    <p class="contact-subtitle">Request a personalized demo for your firm</p>
+                    <div class="contact-benefits">
+                        <div class="contact-benefit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="benefit-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Custom setup for your document types</span>
+                        </div>
+                        <div class="contact-benefit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="benefit-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>Pilot program pricing for early adopters</span>
+                        </div>
+                        <div class="contact-benefit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="benefit-check">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            <span>No commitment required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="you@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Your firm name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your use case..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Request Demo</button>
+                        <p class="form-note">No spam. We typically respond within 24 hours.</p>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="success-title">Thank You!</h3>
+                        <p class="success-text">We've received your demo request and will be in touch within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="social-links">
-            <a href="#" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            </a>
-            <a href="#" aria-label="Twitter">
-                <svg viewBox="0 0 24 24"><path d="M22.46 6c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.58-2.11-9.96-5.02-.42.72-.66 1.56-.66 2.46 0 1.68.85 3.16 2.14 4.02-.79-.02-1.53-.24-2.18-.6v.06c0 2.35 1.67 4.31 3.88 4.76-.4.1-.83.16-1.27.16-.31 0-.62-.03-.92-.08.63 1.96 2.45 3.39 4.61 3.43-1.69 1.32-3.83 2.1-6.15 2.1-.4 0-.8-.02-1.19-.07 2.19 1.4 4.78 2.22 7.57 2.22 9.07 0 14.02-7.52 14.02-14.02 0-.21 0-.43-.01-.64.96-.69 1.79-1.56 2.45-2.55z"/></svg>
-            </a>
-            <a href="#" aria-label="GitHub">
-                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-            </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="footer-logo-text">Craton</span>
+                        <span class="footer-logo-tagline">Labs</span>
+                    </a>
+                    <p class="footer-tagline">Compliance-Ready AI for BFSI Professional Services</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Craton Labs. All rights reserved.</p>
+            </div>
         </div>
-        <p>© 2026 Craton Labs. All rights reserved.</p>
     </footer>
-    
-    <script>
-        // FAQ accordion - wrap in IIFE to avoid global scope issues
-        (function() {
-            var faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(function(item) {
-                var question = item.querySelector('.faq-question');
-                if (question) {
-                    question.addEventListener('click', function(e) {
-                        // Close other items
-                        faqItems.forEach(function(otherItem) {
-                            if (otherItem !== item && otherItem.classList.contains('active')) {
-                                otherItem.classList.remove('active');
-                            }
-                        });
-                        // Toggle current item
-                        item.classList.toggle('active');
-                    });
-                }
-            });
-        })();
-    </script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
