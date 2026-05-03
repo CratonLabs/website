@@ -1,45 +1,25 @@
-/* Craton Labs Landing Page — Tailwind Extensions */
-/* Only custom CSS: claymorphic shadows and decorative blobs */
+/* Craton Labs — Editorial Brutalist Theme Extensions */
+/* Only custom CSS not available in Tailwind */
+
+.bg-grid {
+    background-image: 
+        linear-gradient(to right, rgba(61,53,49,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(61,53,49,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
 
 .clay {
-  background: #faf8f5;
-  box-shadow:
-    8px 8px 20px rgba(61, 53, 49, 0.08),
-    -8px -8px 20px rgba(255, 255, 255, 0.85),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.7);
-}
-
-.clay-dark {
-  background: #f5f0e8;
-  box-shadow:
-    8px 8px 20px rgba(61, 53, 49, 0.10),
-    -8px -8px 20px rgba(255, 255, 255, 0.70),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.60);
-}
-
-.clay-inset {
-  background: #f5f0e8;
-  box-shadow:
-    inset 4px 4px 8px rgba(61, 53, 49, 0.06),
-    inset -4px -4px 8px rgba(255, 255, 255, 0.70);
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
+    background: #faf8f5;
+    box-shadow: 
+        6px 6px 16px rgba(61,53,49,0.06),
+        -6px -6px 16px rgba(255,255,255,0.8),
+        inset 1px 1px 2px rgba(255,255,255,0.6);
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delay {
-  animation: float 8s ease-in-out infinite 2s;
-}
+.animate-float { animation: float 7s ease-in-out infinite; }
+.animate-float-delay { animation: float 9s ease-in-out infinite 2s; }

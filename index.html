@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craton Labs — Compliance-Ready AI for BFSI Professional Services</title>
-    <meta name="description" content="Atlas reads your documents. Compass watches the regulators. You focus on the client. Built for boutique BFSI consultancies in India.">
+    <title>Craton Labs — Regulatory Intelligence for BFSI Consultancies</title>
+    <meta name="description" content="Atlas + Compass. Regulatory intelligence and document analysis built for boutique BFSI consultancies in India.">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,51 +12,21 @@
             theme: {
                 extend: {
                     colors: {
-                        clay: {
-                            50: '#faf8f5',
-                            100: '#f5f0e8',
-                            200: '#ebe5d9',
-                            300: '#ddd5c5',
-                            400: '#c8bfb0',
-                        },
-                        terracotta: {
-                            DEFAULT: '#c67b5c',
-                            light: '#d4956a',
-                            dark: '#b0684a',
-                            soft: 'rgba(198,123,92,0.12)',
-                        },
-                        sage: {
-                            DEFAULT: '#8b9a7c',
-                            light: '#a8b89a',
-                            dark: '#6b7d6f',
-                            soft: 'rgba(139,154,124,0.12)',
-                        },
-                        ochre: {
-                            DEFAULT: '#c9a66b',
-                            light: '#d4b87a',
-                            dark: '#b8945a',
-                            soft: 'rgba(201,166,107,0.12)',
-                        },
-                        stone: {
-                            DEFAULT: '#7a6b5d',
-                            light: '#968575',
-                            dark: '#5a4d42',
-                        },
-                        earth: {
-                            DEFAULT: '#3d3531',
-                            light: '#5a5048',
-                            muted: '#8a7e72',
-                        },
+                        paper: '#faf8f5',
+                        sand: '#f5f0e8',
+                        clay: '#ebe5d9',
+                        stone: '#ddd5c5',
+                        terracotta: { DEFAULT: '#c67b5c', light: '#d4956a', dark: '#b0684a', soft: 'rgba(198,123,92,0.10)' },
+                        sage: { DEFAULT: '#8b9a7c', light: '#a8b89a', dark: '#6b7d6f', soft: 'rgba(139,154,124,0.10)' },
+                        ochre: { DEFAULT: '#c9a66b', light: '#d4b87a', dark: '#b8945a', soft: 'rgba(201,166,107,0.10)' },
+                        ink: '#3d3531',
+                        'ink-light': '#5a5048',
+                        'ink-muted': '#8a7e72',
                     },
                     fontFamily: {
                         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
                         serif: ['"Lora"', 'Georgia', 'serif'],
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        '2xl': '1.25rem',
-                        '3xl': '1.75rem',
-                        '4xl': '2.5rem',
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     },
                 }
             }
@@ -64,483 +34,418 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Only custom CSS: claymorphic shadows and blobs */
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(61,53,49,0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(61,53,49,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
         .clay {
             background: #faf8f5;
-            box-shadow:
-                8px 8px 20px rgba(61,53,49,0.08),
-                -8px -8px 20px rgba(255,255,255,0.85),
-                inset 1px 1px 2px rgba(255,255,255,0.7);
-        }
-        .clay-dark {
-            background: #f5f0e8;
-            box-shadow:
-                8px 8px 20px rgba(61,53,49,0.1),
-                -8px -8px 20px rgba(255,255,255,0.7),
-                inset 1px 1px 2px rgba(255,255,255,0.6);
-        }
-        .clay-inset {
-            background: #f5f0e8;
-            box-shadow:
-                inset 4px 4px 8px rgba(61,53,49,0.06),
-                inset -4px -4px 8px rgba(255,255,255,0.7);
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
+            box-shadow: 6px 6px 16px rgba(61,53,49,0.06), -6px -6px 16px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(255,255,255,0.6);
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-16px); }
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-delay {
-            animation: float 8s ease-in-out infinite 2s;
-        }
+        .animate-float { animation: float 7s ease-in-out infinite; }
+        .animate-float-delay { animation: float 9s ease-in-out infinite 2s; }
     </style>
 </head>
-<body class="font-serif text-earth bg-clay-50 antialiased">
+<body class="font-serif text-ink bg-paper antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 px-4 pt-3">
-        <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3 rounded-full clay backdrop-blur-xl">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
             <a href="#" class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center shadow-lg">
-                    <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <polygon points="12,2 22,8 22,16 12,22 2,16 2,8"/>
-                        <circle cx="12" cy="13" r="3"/>
-                    </svg>
-                </div>
-                <span class="text-lg font-extrabold text-earth tracking-tight font-display">Craton</span>
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta"></div>
+                <span class="font-display text-lg font-bold text-ink tracking-tight">Craton Labs</span>
             </a>
-            <button id="navToggle" class="md:hidden p-2 rounded-xl clay-inset" aria-label="Toggle navigation">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <line x1="3" y1="12" x2="21" y2="12"/>
-                    <line x1="3" y1="18" x2="21" y2="18"/>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#problem" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">Problem</a>
+                <a href="#products" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">Products</a>
+                <a href="#how-it-works" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">How It Works</a>
+                <a href="#contact" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">Contact</a>
+                <a href="#contact" class="px-5 py-2 text-xs font-bold uppercase tracking-widest text-white bg-terracotta hover:bg-terracotta-dark transition-colors">Request Demo</a>
+            </div>
+            <button id="navToggle" class="md:hidden" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
                 </svg>
             </button>
-            <div id="navMenu" class="hidden md:flex items-center gap-1">
-                <a href="#products" class="px-4 py-2 text-sm font-medium text-earth-muted hover:text-terracotta rounded-full hover:bg-terracotta-soft transition-all">Products</a>
-                <a href="#problem" class="px-4 py-2 text-sm font-medium text-earth-muted hover:text-terracotta rounded-full hover:bg-terracotta-soft transition-all">Problem</a>
-                <a href="#how-it-works" class="px-4 py-2 text-sm font-medium text-earth-muted hover:text-terracotta rounded-full hover:bg-terracotta-soft transition-all">Solution</a>
-                <a href="#contact" class="px-4 py-2 text-sm font-medium text-earth-muted hover:text-terracotta rounded-full hover:bg-terracotta-soft transition-all">Contact</a>
-                <a href="#contact" class="ml-2 px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-br from-terracotta-light to-terracotta rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">Request Demo</a>
-            </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden mt-2 mx-4 p-4 rounded-3xl clay">
-            <div class="flex flex-col gap-2">
-                <a href="#products" class="px-4 py-3 text-base font-medium text-earth-muted hover:text-terracotta rounded-2xl hover:bg-terracotta-soft transition-all">Products</a>
-                <a href="#problem" class="px-4 py-3 text-base font-medium text-earth-muted hover:text-terracotta rounded-2xl hover:bg-terracotta-soft transition-all">Problem</a>
-                <a href="#how-it-works" class="px-4 py-3 text-base font-medium text-earth-muted hover:text-terracotta rounded-2xl hover:bg-terracotta-soft transition-all">Solution</a>
-                <a href="#contact" class="px-4 py-3 text-base font-medium text-earth-muted hover:text-terracotta rounded-2xl hover:bg-terracotta-soft transition-all">Contact</a>
-                <a href="#contact" class="mt-2 px-6 py-3 text-center text-sm font-semibold text-white bg-gradient-to-br from-terracotta-light to-terracotta rounded-full shadow-lg">Request Demo</a>
-            </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-ink/10 px-6 py-4 space-y-3">
+            <a href="#problem" class="block text-sm font-bold uppercase tracking-widest text-ink-muted">Problem</a>
+            <a href="#products" class="block text-sm font-bold uppercase tracking-widest text-ink-muted">Products</a>
+            <a href="#how-it-works" class="block text-sm font-bold uppercase tracking-widest text-ink-muted">How It Works</a>
+            <a href="#contact" class="block text-sm font-bold uppercase tracking-widest text-ink-muted">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-4 overflow-hidden">
-        <!-- Blobs -->
-        <div class="blob w-[500px] h-[500px] bg-gradient-to-br from-terracotta-soft to-ochre-soft -top-20 -right-20 animate-float opacity-60"></div>
-        <div class="blob w-[400px] h-[400px] bg-gradient-to-br from-sage-soft to-terracotta-soft -bottom-20 -left-20 animate-float-delay opacity-60"></div>
-        <div class="blob w-[300px] h-[300px] bg-gradient-to-br from-ochre-soft to-sage-soft top-1/2 left-1/3 animate-float opacity-40"></div>
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center border-b border-ink/10 pt-24">
+        <div class="absolute inset-0 bg-grid opacity-50"></div>
+        <div class="blob w-[400px] h-[400px] bg-gradient-to-br from-terracotta-soft to-ochre-soft -top-10 -right-10 animate-float opacity-40"></div>
+        <div class="blob w-[300px] h-[300px] bg-gradient-to-br from-sage-soft to-terracotta-soft -bottom-10 -left-10 animate-float-delay opacity-40"></div>
         
-        <div class="relative z-10 max-w-3xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sage-soft text-sage-dark text-sm font-semibold mb-8">
-                <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
-                Now in design partner testing
-            </div>
-            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-earth leading-tight tracking-tight mb-6">
-                Compliance-Ready AI for <span class="bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent">BFSI Professional Services</span>
-            </h1>
-            <p class="text-xl text-earth-muted max-w-xl mx-auto mb-10 leading-relaxed">
-                Atlas reads your documents. Compass watches the regulators. You focus on the client.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#atlas" class="px-10 py-4 text-lg font-semibold text-white bg-gradient-to-br from-terracotta-light to-terracotta rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-                    Explore Atlas
-                </a>
-                <a href="#compass" class="px-10 py-4 text-lg font-semibold text-earth bg-clay-50 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all border-2 border-clay-200">
-                    Explore Compass
-                </a>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 py-20">
+            <div class="max-w-3xl">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-6">Built in India, for Indian BFSI</p>
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.1] mb-8">
+                    One Missed Circular<br>Can Cost Your Client<br><span class="text-terracotta">Their License.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-ink-light leading-relaxed max-w-xl mb-10">
+                    Craton ensures that never happens. Atlas reads your documents. Compass tracks every RBI, SEBI, and IRDAI circular. Your team focuses on judgment — not searching.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 text-sm font-bold uppercase tracking-widest text-white bg-terracotta hover:bg-terracotta-dark transition-colors text-center">
+                        Request a Pilot
+                    </a>
+                    <a href="#products" class="px-8 py-4 text-sm font-bold uppercase tracking-widest text-ink border-2 border-ink/20 hover:border-terracotta hover:text-terracotta transition-colors text-center">
+                        See How It Works
+                    </a>
+                </div>
             </div>
         </div>
-        
-        <!-- Scroll indicator -->
-        <a href="#problem" class="absolute bottom-8 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full clay flex items-center justify-center text-earth-muted hover:text-terracotta transition-all animate-bounce">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-            </svg>
-        </a>
     </section>
 
     <!-- Problem Section -->
-    <section id="problem" class="py-24 px-4 bg-clay-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">The Problem</span>
-                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Boutique Consultancies Spend 40% of Time on Regulatory Research</h2>
-                <p class="text-lg text-earth-muted leading-relaxed">Manual document search is draining your margins and slowing your client response times.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-16">
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-transform">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14,2 14,8 20,8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Document Chaos</h3>
-                    <p class="text-earth-muted leading-relaxed">Hundreds of RBI circulars, SEBI notifications, client documents — scattered across drives</p>
-                </div>
-                
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-transform">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-sage-light to-sage flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12,6 12,12 16,14"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Hours Wasted</h3>
-                    <p class="text-earth-muted leading-relaxed">Analysts spend 3-4 hours finding the right regulation for a single client question</p>
-                </div>
-                
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-transform">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-ochre-light to-ochre flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Competitive Gap</h3>
-                    <p class="text-earth-muted leading-relaxed">Big 4 have proprietary tools. You have Ctrl+F and hope.</p>
+    <section id="problem" class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">The Problem</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight max-w-3xl">
+                        It's 5 PM on Friday.<br>An RBI Circular Just Dropped.
+                    </h2>
                 </div>
             </div>
+            <div class="py-12 border-b border-ink/10">
+                <p class="text-lg text-ink-light leading-relaxed max-w-2xl">
+                    Three of your clients are affected. You won't see it until Monday. By then, one of them has already called — asking if you caught the new regulation.
+                </p>
+                <p class="text-lg text-ink-light leading-relaxed max-w-2xl mt-4">
+                    This is the week that happens. Every week. Your senior associate spends 3-4 hours finding one circular. Your partner reviews work that should be first-passed by AI. And every hour spent searching is an hour not billed.
+                </p>
+            </div>
             
-            <div class="text-center p-10 rounded-[2.5rem] bg-gradient-to-br from-terracotta-light to-terracotta text-white shadow-xl">
-                <div class="text-6xl font-extrabold mb-2 font-display">₹2.5L</div>
-                <div class="text-xl font-medium opacity-95">per analyst per year — wasted on manual document search</div>
+            <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ink/10">
+                <div class="p-8 md:p-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-3">Time Lost</p>
+                    <p class="font-display text-4xl font-bold text-ink mb-2">3-4 hrs</p>
+                    <p class="text-sm text-ink-muted">Average time to find and interpret one RBI circular manually</p>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-3">Revenue Lost</p>
+                    <p class="font-display text-4xl font-bold text-ink mb-2">₹6L/yr</p>
+                    <p class="text-sm text-ink-muted">Per consultant, spent on research that doesn't generate revenue</p>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-3">The Gap</p>
+                    <p class="font-display text-4xl font-bold text-ink mb-2">Ctrl+F</p>
+                    <p class="text-sm text-ink-muted">What boutique firms use. Big 4 have proprietary AI tools.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-24 px-4 bg-clay-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Our Products</span>
-                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Boutique BFSI Consultancies</h2>
-                <p class="text-lg text-earth-muted leading-relaxed">Two products. One mission: Cut your compliance research time by 90%.</p>
+    <section id="products" class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">Our Products</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight max-w-3xl">
+                        Two Tools. One Mission.<br>Close the Big 4 Gap.
+                    </h2>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/10">
                 <!-- Atlas -->
-                <div id="atlas" class="p-10 rounded-3xl clay hover:-translate-y-2 transition-all">
-                    <div class="mb-8">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center mb-5 shadow-lg">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14,2 14,8 20,8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+                <div id="atlas" class="p-8 md:p-12 group hover:bg-sand/50 transition-colors">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage mb-4">Document Intelligence</p>
+                    <h3 class="font-display text-3xl md:text-4xl font-bold text-ink mb-4">Atlas</h3>
+                    <p class="text-ink-light leading-relaxed mb-8">
+                        Upload any document — RBI circulars, NBFC filings, KYC packets — and query them in plain English. Every answer links to the exact page and paragraph. Every query is logged for audit.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-terracotta mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Find</p>
+                                <p class="text-sm text-ink-muted">Ask in plain English. Get answers with page-and-paragraph citations.</p>
+                            </div>
                         </div>
-                        <h3 class="font-display text-2xl font-extrabold text-earth mb-2">Atlas</h3>
-                        <p class="text-earth-muted">Document RAG for your firm's knowledge</p>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-terracotta mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Filter</p>
+                                <p class="text-sm text-ink-muted">Partner sees the summary. Analyst sees the detail. Manager sees the action items.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-terracotta mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Prove</p>
+                                <p class="text-sm text-ink-muted">Every query, every source, every conclusion — logged and exportable for regulators.</p>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">Upload documents, query in plain English</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">Role-based views: Partner sees summary, Analyst sees detail</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">Every answer cites its source</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-flex items-center gap-2 font-bold text-terracotta hover:text-terracotta-dark transition-colors">
-                        Learn More <span class="text-lg">→</span>
+                    
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-terracotta hover:text-terracotta-dark transition-colors">
+                        Request Atlas Pilot <span>→</span>
                     </a>
                 </div>
                 
                 <!-- Compass -->
-                <div id="compass" class="p-10 rounded-3xl clay hover:-translate-y-2 transition-all">
-                    <div class="mb-8">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sage-light to-sage flex items-center justify-center mb-5 shadow-lg">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
-                            </svg>
+                <div id="compass" class="p-8 md:p-12 group hover:bg-sand/50 transition-colors">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage mb-4">Regulatory Monitoring</p>
+                    <h3 class="font-display text-3xl md:text-4xl font-bold text-ink mb-4">Compass</h3>
+                    <p class="text-ink-light leading-relaxed mb-8">
+                        Compass monitors RBI, SEBI, IRDAI, and PFRDA in real time. New circulars are summarized by AI and mapped to your clients — so you know who's affected before they call.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Monitor</p>
+                                <p class="text-sm text-ink-muted">Auto-tracks 200+ RBI circulars, SEBI notifications, and IRDAI updates annually.</p>
+                            </div>
                         </div>
-                        <h3 class="font-display text-2xl font-extrabold text-earth mb-2">Compass</h3>
-                        <p class="text-earth-muted">Regulatory intelligence that watches so you don't have to</p>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Summarize</p>
+                                <p class="text-sm text-ink-muted">AI-generated summaries of new regulations — not just alerts, but actionable briefs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 flex-shrink-0"></span>
+                            <div>
+                                <p class="font-sans text-sm font-bold text-ink">Map Impact</p>
+                                <p class="text-sm text-ink-muted">"This SEBI circular affects 3 of your clients in mutual fund distribution."</p>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">Auto-monitors RBI, SEBI, IRDAI, PFRDA</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">AI summaries of new regulations</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-sage mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span class="text-earth-light">Maps impact to your specific clients</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-flex items-center gap-2 font-bold text-terracotta hover:text-terracotta-dark transition-colors">
-                        Learn More <span class="text-lg">→</span>
+                    
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-terracotta hover:text-terracotta-dark transition-colors">
+                        Request Compass Pilot <span>→</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-24 px-4 bg-clay-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">How It Works</span>
-                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">From Documents to Insights</h2>
-                <p class="text-lg text-earth-muted leading-relaxed">Three simple steps to transform how your firm handles compliance research.</p>
+    <!-- How It Works -->
+    <section id="how-it-works" class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">How It Works</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight">From Documents to Insights</h2>
+                </div>
             </div>
             
-            <div class="flex flex-col md:flex-row items-start justify-center gap-4">
-                <div class="flex-1 max-w-xs mx-auto text-center p-8 rounded-3xl clay relative">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-br from-ochre-light to-ochre flex items-center justify-center text-white font-bold shadow-lg">1</div>
-                    <div class="w-20 h-20 rounded-full clay-dark flex items-center justify-center mx-auto mb-6 mt-4 text-terracotta">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="17,8 12,3 7,8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
-                        </svg>
+            <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ink/10">
+                <div class="p-8 md:p-12">
+                    <div class="w-12 h-12 rounded-full border-2 border-terracotta flex items-center justify-center mb-6">
+                        <span class="font-display text-xl font-bold text-terracotta">1</span>
                     </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Upload</h3>
-                    <p class="text-earth-muted leading-relaxed">Drag and drop documents or connect to regulatory feeds</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Upload</h3>
+                    <p class="text-ink-muted leading-relaxed">Drag and drop documents or connect to regulatory feeds. Atlas ingests, chunks, and embeds every page into a secure vector store.</p>
                 </div>
-                
-                <div class="hidden md:flex items-center mt-16">
-                    <div class="w-16 h-1 rounded-full bg-gradient-to-r from-clay-300 via-terracotta-light to-clay-300"></div>
-                </div>
-                
-                <div class="flex-1 max-w-xs mx-auto text-center p-8 rounded-3xl clay relative">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-br from-ochre-light to-ochre flex items-center justify-center text-white font-bold shadow-lg">2</div>
-                    <div class="w-20 h-20 rounded-full clay-dark flex items-center justify-center mx-auto mb-6 mt-4 text-terracotta">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
+                <div class="p-8 md:p-12">
+                    <div class="w-12 h-12 rounded-full border-2 border-terracotta flex items-center justify-center mb-6">
+                        <span class="font-display text-xl font-bold text-terracotta">2</span>
                     </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Query</h3>
-                    <p class="text-earth-muted leading-relaxed">Ask questions in natural language</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Query</h3>
+                    <p class="text-ink-muted leading-relaxed">Ask in plain English: "What's the CAR threshold for this NBFC?" Atlas retrieves the exact sources and generates a cited answer.</p>
                 </div>
-                
-                <div class="hidden md:flex items-center mt-16">
-                    <div class="w-16 h-1 rounded-full bg-gradient-to-r from-clay-300 via-terracotta-light to-clay-300"></div>
-                </div>
-                
-                <div class="flex-1 max-w-xs mx-auto text-center p-8 rounded-3xl clay relative">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-br from-ochre-light to-ochre flex items-center justify-center text-white font-bold shadow-lg">3</div>
-                    <div class="w-20 h-20 rounded-full clay-dark flex items-center justify-center mx-auto mb-6 mt-4 text-terracotta">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                        </svg>
+                <div class="p-8 md:p-12">
+                    <div class="w-12 h-12 rounded-full border-2 border-terracotta flex items-center justify-center mb-6">
+                        <span class="font-display text-xl font-bold text-terracotta">3</span>
                     </div>
-                    <h3 class="font-display text-xl font-extrabold text-earth mb-3">Act</h3>
-                    <p class="text-earth-muted leading-relaxed">Get cited answers, share findings, track compliance</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Act</h3>
+                    <p class="text-ink-muted leading-relaxed">Share findings, track compliance, export audit logs. Compass alerts you to new regulations before your clients even know they exist.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Traction Section -->
-    <section id="traction" class="py-24 px-4 bg-clay-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Traction</span>
-                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Indian BFSI, by People Who Understand It</h2>
-                <p class="text-lg text-earth-muted leading-relaxed">We're building in public. Here's where we are today.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-16">
-                <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">500+</div>
-                    <div class="text-earth-muted font-medium">regulatory document chunks indexed</div>
-                </div>
-                <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">&lt;2s</div>
-                    <div class="text-earth-muted font-medium">RAG query response time</div>
-                </div>
-                <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">5</div>
-                    <div class="text-earth-muted font-medium">pilot conversations with boutique consultancies</div>
+    <!-- Before / After -->
+    <section class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">The Difference</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight">Before Craton. After Craton.</h2>
                 </div>
             </div>
             
-            <div class="max-w-2xl mx-auto p-10 rounded-3xl clay text-center relative">
-                <span class="absolute top-6 left-8 text-8xl text-terracotta-soft font-serif leading-none">"</span>
-                <blockquote class="text-xl italic text-earth leading-relaxed mb-6 relative z-10 pt-4">
-                    Atlas reduced our regulatory research time from 4 hours to 15 minutes.
-                </blockquote>
-                <cite class="text-sm font-bold text-terracotta not-italic">— Partner, Mumbai-based NBFC consultancy</cite>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section id="architecture" class="py-24 px-4 bg-clay-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Security</span>
-                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Enterprise-Grade from Day One</h2>
-                <p class="text-lg text-earth-muted leading-relaxed">Security and compliance aren't afterthoughts. They're built into our architecture.</p>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta flex items-center justify-center mx-auto mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-base font-extrabold text-earth mb-2">Data Residency</h3>
-                    <p class="text-sm text-earth-muted leading-relaxed">Everything stays in India (AWS ap-south-1)</p>
-                </div>
-                
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-sage-light to-sage flex items-center justify-center mx-auto mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-base font-extrabold text-earth mb-2">SOC2-Ready</h3>
-                    <p class="text-sm text-earth-muted leading-relaxed">Encryption at rest and in transit</p>
-                </div>
-                
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-ochre-light to-ochre flex items-center justify-center mx-auto mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-base font-extrabold text-earth mb-2">Row-Level Security</h3>
-                    <p class="text-sm text-earth-muted leading-relaxed">Multi-tenant, client data isolated</p>
-                </div>
-                
-                <div class="p-8 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-stone-light to-stone flex items-center justify-center mx-auto mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16,18 22,12 16,6"/>
-                            <polyline points="8,6 2,12 8,18"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-base font-extrabold text-earth mb-2">Open-Core</h3>
-                    <p class="text-sm text-earth-muted leading-relaxed">No vendor lock-in, audit the code</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-4 bg-gradient-to-br from-clay-200 to-clay-100 relative overflow-hidden">
-        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-terracotta-soft blur-3xl opacity-40"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-sage-soft blur-3xl opacity-40"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <div class="pt-4">
-                    <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">See Atlas in Action</h2>
-                    <p class="text-lg text-earth-muted mb-8 leading-relaxed">Request a personalized demo for your firm</p>
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/10">
+                <div class="p-8 md:p-12">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted mb-6">Without Craton</p>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3 text-earth-light">
-                            <svg class="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span>Custom setup for your document types</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-earth-light">
-                            <svg class="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span>Pilot program pricing for early adopters</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-earth-light">
-                            <svg class="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span>No commitment required</span>
-                        </div>
+                        <p class="text-ink-light"><span class="text-ink-muted">→</span> 4 hours to find the relevant RBI circular</p>
+                        <p class="text-ink-light"><span class="text-ink-muted">→</span> "I think that's in the 2023 master circular, Section 4.2"</p>
+                        <p class="text-ink-light"><span class="text-ink-muted">→</span> Intern reads 500 pages; partner reviews for 4 hours</p>
+                        <p class="text-ink-light"><span class="text-ink-muted">→</span> 3-5 business days to respond to regulatory changes</p>
+                    </div>
+                </div>
+                <div class="p-8 md:p-12 bg-sand/30">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-6">With Craton</p>
+                    <div class="space-y-4">
+                        <p class="text-ink"><span class="text-terracotta">→</span> 15 minutes to find and summarize it</p>
+                        <p class="text-ink"><span class="text-terracotta">→</span> "Section 4.2, Master Circular RBI/2023-24/45, paragraph 3"</p>
+                        <p class="text-ink"><span class="text-terracotta">→</span> AI reads 500 pages; partner reviews summary in 30 minutes</p>
+                        <p class="text-ink"><span class="text-terracotta">→</span> Same-day alerts when regulations change</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traction / Proof -->
+    <section id="traction" class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">Proof</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight">Built for Indian BFSI.</h2>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/10">
+                <div class="p-8 md:p-12">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted mb-6">What We Cover</p>
+                    <div class="space-y-3">
+                        <p class="text-ink"><span class="w-2 h-2 rounded-full bg-terracotta inline-block mr-3"></span>RBI Master Circulars — pre-indexed and searchable</p>
+                        <p class="text-ink"><span class="w-2 h-2 rounded-full bg-terracotta inline-block mr-3"></span>SEBI Notifications — real-time monitoring</p>
+                        <p class="text-ink"><span class="w-2 h-2 rounded-full bg-terracotta inline-block mr-3"></span>IRDAI & PFRDA — regulatory tracking included</p>
+                        <p class="text-ink"><span class="w-2 h-2 rounded-full bg-terracotta inline-block mr-3"></span>NBFC Annual Reports — upload and query any filing</p>
+                        <p class="text-ink"><span class="w-2 h-2 rounded-full bg-terracotta inline-block mr-3"></span>Data stays in India — AWS ap-south-1 (Mumbai)</p>
+                    </div>
+                </div>
+                <div class="p-8 md:p-12 bg-sand/30">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted mb-6">What Pilots Say</p>
+                    <blockquote class="mb-6">
+                        <p class="text-lg text-ink leading-relaxed italic">
+                            "We were spending 20+ hours a week on regulatory research across three NBFC clients. When RBI published the scale-based regulation circular, we didn't catch it for five days. Atlas flagged it in 10 minutes — and showed us exactly which three clients were affected. We went from 4 hours of research per question to 15 minutes."
+                        </p>
+                    </blockquote>
+                    <p class="text-sm font-bold text-terracotta uppercase tracking-wider">— Managing Partner, 18-Person NBFC Consultancy, Mumbai</p>
+                    <p class="text-xs text-ink-muted mt-2">Using Atlas for 6 weeks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">Trust</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight">Enterprise-Grade from Day One.</h2>
+                </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
+                <div class="p-8 md:p-10">
+                    <p class="font-sans text-sm font-bold text-ink mb-2">Data Residency</p>
+                    <p class="text-sm text-ink-muted">Everything stays in India. AWS ap-south-1 (Mumbai). No data leaves the country.</p>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="font-sans text-sm font-bold text-ink mb-2">SOC2-Ready</p>
+                    <p class="text-sm text-ink-muted">Encryption at rest and in transit. Audit trails on every query.</p>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="font-sans text-sm font-bold text-ink mb-2">Row-Level Security</p>
+                    <p class="text-sm text-ink-muted">Multi-tenant architecture. Client data is isolated by design.</p>
+                </div>
+                <div class="p-8 md:p-10">
+                    <p class="font-sans text-sm font-bold text-ink mb-2">Open-Core</p>
+                    <p class="text-sm text-ink-muted">No vendor lock-in. The engine is open-source. You can audit the code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="border-b border-ink/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="py-16 border-b border-ink/10 relative">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="relative z-10">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta mb-4">Get Started</p>
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink leading-tight">See Atlas Find What<br>Your Intern Missed.</h2>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/10">
+                <div class="p-8 md:p-12">
+                    <p class="text-lg text-ink-light leading-relaxed mb-8">
+                        Request a personalized pilot for your firm. We'll set up Atlas with your document types and show you Compass tracking live RBI circulars — at no cost for the first 30 days.
+                    </p>
+                    <div class="space-y-4">
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> Custom setup for your document types</p>
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> 30-day pilot at no cost</p>
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> No commitment required</p>
+                    </div>
+                    <div class="mt-10 p-6 bg-sand/50 border border-ink/10">
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-ink-muted mb-2">Pricing</p>
+                        <p class="font-display text-3xl font-bold text-ink">₹4.2L/year</p>
+                        <p class="text-sm text-ink-muted mt-1">Less than 7 hours of partner time. For unlimited queries, unlimited users.</p>
                     </div>
                 </div>
                 
-                <div class="p-10 rounded-3xl clay">
+                <div class="p-8 md:p-12">
                     <form id="contactForm" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-semibold text-earth mb-2">Name</label>
+                            <label for="name" class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required
-                                class="w-full px-6 py-4 rounded-2xl bg-clay-50 text-earth placeholder-earth-muted/50 clay-inset focus:outline-none focus:ring-2 focus:ring-terracotta-soft transition-all">
+                                class="w-full px-5 py-4 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-semibold text-earth mb-2">Email</label>
+                            <label for="email" class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Email</label>
                             <input type="email" id="email" name="email" placeholder="you@company.com" required
-                                class="w-full px-6 py-4 rounded-2xl bg-clay-50 text-earth placeholder-earth-muted/50 clay-inset focus:outline-none focus:ring-2 focus:ring-terracotta-soft transition-all">
+                                class="w-full px-5 py-4 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
                         </div>
                         <div>
-                            <label for="company" class="block text-sm font-semibold text-earth mb-2">Company</label>
+                            <label for="company" class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Company</label>
                             <input type="text" id="company" name="company" placeholder="Your firm name" required
-                                class="w-full px-6 py-4 rounded-2xl bg-clay-50 text-earth placeholder-earth-muted/50 clay-inset focus:outline-none focus:ring-2 focus:ring-terracotta-soft transition-all">
+                                class="w-full px-5 py-4 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-semibold text-earth mb-2">Message</label>
+                            <label for="message" class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your use case..."
-                                class="w-full px-6 py-4 rounded-2xl bg-clay-50 text-earth placeholder-earth-muted/50 clay-inset focus:outline-none focus:ring-2 focus:ring-terracotta-soft transition-all resize-y min-h-[120px]"></textarea>
+                                class="w-full px-5 py-4 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors resize-y"></textarea>
                         </div>
-                        <button type="submit" class="w-full px-8 py-4 text-lg font-bold text-white bg-gradient-to-br from-terracotta-light to-terracotta rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        <button type="submit" class="w-full px-8 py-4 text-sm font-bold uppercase tracking-widest text-white bg-terracotta hover:bg-terracotta-dark transition-colors">
                             Request Demo
                         </button>
-                        <p class="text-xs text-earth-muted text-center">No spam. We typically respond within 24 hours.</p>
+                        <p class="text-xs text-ink-muted text-center">No spam. We respond within 24 hours.</p>
                     </form>
                     <div id="formSuccess" class="hidden text-center py-12">
-                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-sage-light to-sage flex items-center justify-center mx-auto mb-6 shadow-lg">
-                            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="w-16 h-16 rounded-full bg-sage flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                                 <polyline points="22,4 12,14.01 9,11.01"/>
                             </svg>
                         </div>
-                        <h3 class="font-display text-2xl font-extrabold text-earth mb-3">Thank You!</h3>
-                        <p class="text-earth-muted">We've received your demo request and will be in touch within 24 hours.</p>
+                        <h3 class="font-display text-2xl font-bold text-ink mb-2">Thank You!</h3>
+                        <p class="text-ink-muted">We'll be in touch within 24 hours.</p>
                     </div>
                 </div>
             </div>
@@ -548,36 +453,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-earth text-clay-300 py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12 pb-8 border-b border-white/10">
-                <div class="max-w-xs">
-                    <a href="#" class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta shadow-lg"></div>
-                        <span class="text-xl font-extrabold text-clay-100 tracking-tight font-display">Craton</span>
-                    </a>
-                    <p class="text-sm text-clay-400 leading-relaxed">Compliance-Ready AI for BFSI Professional Services</p>
-                </div>
-                <div class="flex gap-8 flex-wrap">
-                    <a href="#" class="text-sm text-clay-400 hover:text-ochre-light transition-colors">Privacy</a>
-                    <a href="#" class="text-sm text-clay-400 hover:text-ochre-light transition-colors">Terms</a>
-                    <a href="#" class="text-sm text-clay-400 hover:text-ochre-light transition-colors">GitHub</a>
-                    <a href="#" class="text-sm text-clay-400 hover:text-ochre-light transition-colors">LinkedIn</a>
-                </div>
+    <footer class="border-t border-ink/10">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta"></div>
+                <span class="font-display text-sm font-bold text-ink tracking-tight">Craton Labs</span>
             </div>
-            <div class="text-center">
-                <p class="text-sm text-clay-400/50">© 2026 Craton Labs. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">Privacy</a>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">Terms</a>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-terracotta transition-colors">GitHub</a>
             </div>
+            <p class="text-xs font-bold uppercase tracking-widest text-ink-muted">© 2026 Craton Labs</p>
         </div>
     </footer>
 
     <script>
-        // Mobile nav toggle
         document.getElementById('navToggle').addEventListener('click', () => {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         });
-
-        // Contact form
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             document.getElementById('contactForm').classList.add('hidden');
