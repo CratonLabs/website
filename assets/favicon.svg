@@ -1,19 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Craton Labs Favicon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a4d4f"/>
-      <stop offset="100%" style="stop-color:#0d6164"/>
+    <linearGradient id="clayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4956a"/>
+      <stop offset="100%" style="stop-color:#c67b5c"/>
     </linearGradient>
   </defs>
-  <!-- Background -->
-  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
-  <!-- Stylized C letter -->
-  <path d="M22 10c-1.5-1.5-3.5-2.5-6-2.5-4.5 0-8 3.5-8 8s3.5 8 8 8c2.5 0 4.5-1 6-2.5" 
-        fill="none" 
-        stroke="#ffffff" 
-        stroke-width="3" 
-        stroke-linecap="round"/>
-  <!-- Accent dot -->
-  <circle cx="24" cy="8" r="2.5" fill="#b8860b"/>
+  <circle cx="12" cy="12" r="11" fill="url(#clayGrad)"/>
+  <circle cx="12" cy="12" r="11" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <polygon points="12,5 18,9 18,15 12,19 6,15 6,9" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+  <circle cx="12" cy="13" r="2.5" fill="none" stroke="white" stroke-width="1.5"/>
 </svg>

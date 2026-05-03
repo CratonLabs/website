@@ -11,12 +11,17 @@
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <div class="container nav-container">
+        <div class="nav-inner">
             <a href="#" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/>
+                        <circle cx="12" cy="13" r="3"/>
+                    </svg>
+                </span>
                 <span class="logo-text">Craton</span>
-                <span class="logo-tagline">Labs</span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle clay-btn" id="navToggle" aria-label="Toggle navigation" style="padding: 8px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -28,21 +33,29 @@
                 <a href="#problem" class="nav-link">Problem</a>
                 <a href="#how-it-works" class="nav-link">Solution</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="#contact" class="btn btn-primary nav-cta">Request Demo</a>
+                <a href="#contact" class="clay-btn clay-terracotta nav-cta">Request Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-blob hero-blob--1"></div>
+        <div class="hero-blob hero-blob--2"></div>
+        <div class="hero-blob hero-blob--3"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Compliance-Ready AI for BFSI Professional Services</h1>
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Now in design partner testing</span>
+                </div>
+                <h1 class="hero-title">
+                    Compliance-Ready AI for <span class="hero-title-accent">BFSI Professional Services</span>
+                </h1>
                 <p class="hero-subtitle">Atlas reads your documents. Compass watches the regulators. You focus on the client.</p>
                 <div class="hero-cta-group">
-                    <a href="#atlas" class="btn btn-primary btn-lg">Explore Atlas</a>
-                    <a href="#compass" class="btn btn-secondary btn-lg">Explore Compass</a>
+                    <a href="#atlas" class="clay-btn clay-terracotta">Explore Atlas</a>
+                    <a href="#compass" class="clay-btn btn-outline">Explore Compass</a>
                 </div>
             </div>
         </div>
@@ -59,11 +72,12 @@
     <section class="problem" id="problem">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">The Problem</span>
                 <h2 class="section-title">Boutique Consultancies Spend 40% of Time on Regulatory Research</h2>
                 <p class="section-subtitle">Manual document search is draining your margins and slowing your client response times.</p>
             </div>
             <div class="pain-points">
-                <div class="pain-point">
+                <div class="pain-point clay">
                     <div class="pain-point-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -76,8 +90,8 @@
                     <h3 class="pain-point-title">Document Chaos</h3>
                     <p class="pain-point-text">Hundreds of RBI circulars, SEBI notifications, client documents — scattered across drives</p>
                 </div>
-                <div class="pain-point">
-                    <div class="pain-point-icon">
+                <div class="pain-point clay">
+                    <div class="pain-point-icon pain-point-icon--sage">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12,6 12,12 16,14"></polyline>
@@ -86,8 +100,8 @@
                     <h3 class="pain-point-title">Hours Wasted</h3>
                     <p class="pain-point-text">Analysts spend 3-4 hours finding the right regulation for a single client question</p>
                 </div>
-                <div class="pain-point">
-                    <div class="pain-point-icon">
+                <div class="pain-point clay">
+                    <div class="pain-point-icon pain-point-icon--ochre">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
@@ -110,12 +124,13 @@
     <section class="products" id="products">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Our Products</span>
                 <h2 class="section-title">Built for Boutique BFSI Consultancies</h2>
                 <p class="section-subtitle">Two products. One mission: Cut your compliance research time by 90%.</p>
             </div>
             <div class="products-grid">
                 <!-- Atlas Card -->
-                <div class="product-card" id="atlas">
+                <div class="product-card clay" id="atlas">
                     <div class="product-header">
                         <div class="product-icon product-icon--atlas">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -153,7 +168,7 @@
                 </div>
 
                 <!-- Compass Card -->
-                <div class="product-card" id="compass">
+                <div class="product-card clay" id="compass">
                     <div class="product-header">
                         <div class="product-icon product-icon--compass">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -194,11 +209,12 @@
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">From scattered documents to actionable insights in three steps.</p>
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">From Documents to Insights</h2>
+                <p class="section-subtitle">Three simple steps to transform how your firm handles compliance research.</p>
             </div>
             <div class="steps">
-                <div class="step">
+                <div class="step clay">
                     <div class="step-number">1</div>
                     <div class="step-icon">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -211,7 +227,7 @@
                     <p class="step-text">Drag and drop documents or connect to regulatory feeds</p>
                 </div>
                 <div class="step-connector"></div>
-                <div class="step">
+                <div class="step clay">
                     <div class="step-number">2</div>
                     <div class="step-icon">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -223,7 +239,7 @@
                     <p class="step-text">Ask questions in natural language</p>
                 </div>
                 <div class="step-connector"></div>
-                <div class="step">
+                <div class="step clay">
                     <div class="step-number">3</div>
                     <div class="step-icon">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -241,24 +257,25 @@
     <section class="traction" id="traction">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Traction</span>
                 <h2 class="section-title">Built for Indian BFSI, by People Who Understand It</h2>
                 <p class="section-subtitle">We're building in public. Here's where we are today.</p>
             </div>
             <div class="metrics">
-                <div class="metric">
+                <div class="metric clay">
                     <div class="metric-value">500+</div>
                     <div class="metric-label">regulatory document chunks indexed</div>
                 </div>
-                <div class="metric">
+                <div class="metric clay">
                     <div class="metric-value">&lt;2s</div>
                     <div class="metric-label">RAG query response time</div>
                 </div>
-                <div class="metric">
+                <div class="metric clay">
                     <div class="metric-value">5</div>
                     <div class="metric-label">pilot conversations with boutique consultancies</div>
                 </div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial clay">
                 <blockquote class="testimonial-quote">
                     "Atlas reduced our regulatory research time from 4 hours to 15 minutes."
                 </blockquote>
@@ -271,12 +288,13 @@
     <section class="architecture" id="architecture">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Security</span>
                 <h2 class="section-title">Enterprise-Grade from Day One</h2>
                 <p class="section-subtitle">Security and compliance aren't afterthoughts. They're built into our architecture.</p>
             </div>
             <div class="trust-badges">
-                <div class="trust-badge">
-                    <div class="trust-icon">
+                <div class="trust-badge clay">
+                    <div class="trust-icon trust-icon--terracotta">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -285,17 +303,17 @@
                     <h3 class="trust-title">Data Residency</h3>
                     <p class="trust-text">Everything stays in India (AWS ap-south-1)</p>
                 </div>
-                <div class="trust-badge">
-                    <div class="trust-icon">
+                <div class="trust-badge clay">
+                    <div class="trust-icon trust-icon--sage">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                         </svg>
                     </div>
-                    <h3 class="trust-title">SOC2-Ready Architecture</h3>
+                    <h3 class="trust-title">SOC2-Ready</h3>
                     <p class="trust-text">Encryption at rest and in transit</p>
                 </div>
-                <div class="trust-badge">
-                    <div class="trust-icon">
+                <div class="trust-badge clay">
+                    <div class="trust-icon trust-icon--ochre">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
@@ -306,14 +324,14 @@
                     <h3 class="trust-title">Row-Level Security</h3>
                     <p class="trust-text">Multi-tenant, client data isolated</p>
                 </div>
-                <div class="trust-badge">
-                    <div class="trust-icon">
+                <div class="trust-badge clay">
+                    <div class="trust-icon trust-icon--stone">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="16,18 22,12 16,6"></polyline>
                             <polyline points="8,6 2,12 8,18"></polyline>
                         </svg>
                     </div>
-                    <h3 class="trust-title">Open-Core Engine</h3>
+                    <h3 class="trust-title">Open-Core</h3>
                     <p class="trust-text">No vendor lock-in, audit the code</p>
                 </div>
             </div>
@@ -348,7 +366,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-container">
+                <div class="contact-form-container clay">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
@@ -366,7 +384,7 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your use case..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Request Demo</button>
+                        <button type="submit" class="clay-btn clay-terracotta form-submit">Request Demo</button>
                         <p class="form-note">No spam. We typically respond within 24 hours.</p>
                     </form>
                     <div class="form-success" id="formSuccess">
@@ -390,8 +408,8 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
+                        <span class="footer-logo-icon"></span>
                         <span class="footer-logo-text">Craton</span>
-                        <span class="footer-logo-tagline">Labs</span>
                     </a>
                     <p class="footer-tagline">Compliance-Ready AI for BFSI Professional Services</p>
                 </div>
