@@ -49,6 +49,8 @@
                         },
                     },
                     fontFamily: {
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
                         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                     },
                     borderRadius: {
@@ -62,7 +64,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Only custom CSS: claymorphic shadows and blobs */
         .clay {
@@ -103,7 +105,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-earth bg-clay-50 antialiased">
+<body class="font-serif text-earth bg-clay-50 antialiased">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 px-4 pt-3">
@@ -115,7 +117,7 @@
                         <circle cx="12" cy="13" r="3"/>
                     </svg>
                 </div>
-                <span class="text-lg font-bold text-earth tracking-tight">Craton</span>
+                <span class="text-lg font-bold text-earth tracking-tight font-display">Craton</span>
             </a>
             <button id="navToggle" class="md:hidden p-2 rounded-xl clay-inset" aria-label="Toggle navigation">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -156,7 +158,7 @@
                 <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
                 Now in design partner testing
             </div>
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-earth leading-tight tracking-tight mb-6">
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-earth leading-tight tracking-tight mb-6">
                 Compliance-Ready AI for <span class="bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent">BFSI Professional Services</span>
             </h1>
             <p class="text-xl text-earth-muted max-w-xl mx-auto mb-10 leading-relaxed">
@@ -185,7 +187,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">The Problem</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Boutique Consultancies Spend 40% of Time on Regulatory Research</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Boutique Consultancies Spend 40% of Time on Regulatory Research</h2>
                 <p class="text-lg text-earth-muted leading-relaxed">Manual document search is draining your margins and slowing your client response times.</p>
             </div>
             
@@ -199,7 +201,7 @@
                             <line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Document Chaos</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Document Chaos</h3>
                     <p class="text-earth-muted leading-relaxed">Hundreds of RBI circulars, SEBI notifications, client documents — scattered across drives</p>
                 </div>
                 
@@ -210,7 +212,7 @@
                             <polyline points="12,6 12,12 16,14"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Hours Wasted</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Hours Wasted</h3>
                     <p class="text-earth-muted leading-relaxed">Analysts spend 3-4 hours finding the right regulation for a single client question</p>
                 </div>
                 
@@ -222,13 +224,13 @@
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Competitive Gap</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Competitive Gap</h3>
                     <p class="text-earth-muted leading-relaxed">Big 4 have proprietary tools. You have Ctrl+F and hope.</p>
                 </div>
             </div>
             
             <div class="text-center p-10 rounded-[2.5rem] bg-gradient-to-br from-terracotta-light to-terracotta text-white shadow-xl">
-                <div class="text-6xl font-extrabold mb-2">₹2.5L</div>
+                <div class="text-6xl font-extrabold mb-2 font-display">₹2.5L</div>
                 <div class="text-xl font-medium opacity-95">per analyst per year — wasted on manual document search</div>
             </div>
         </div>
@@ -239,7 +241,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Our Products</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Boutique BFSI Consultancies</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Boutique BFSI Consultancies</h2>
                 <p class="text-lg text-earth-muted leading-relaxed">Two products. One mission: Cut your compliance research time by 90%.</p>
             </div>
             
@@ -255,7 +257,7 @@
                                 <line x1="16" y1="17" x2="8" y2="17"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-earth mb-2">Atlas</h3>
+                        <h3 class="font-display text-2xl font-extrabold text-earth mb-2">Atlas</h3>
                         <p class="text-earth-muted">Document RAG for your firm's knowledge</p>
                     </div>
                     <ul class="space-y-4 mb-8">
@@ -292,7 +294,7 @@
                                 <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-earth mb-2">Compass</h3>
+                        <h3 class="font-display text-2xl font-extrabold text-earth mb-2">Compass</h3>
                         <p class="text-earth-muted">Regulatory intelligence that watches so you don't have to</p>
                     </div>
                     <ul class="space-y-4 mb-8">
@@ -328,7 +330,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">How It Works</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">From Documents to Insights</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">From Documents to Insights</h2>
                 <p class="text-lg text-earth-muted leading-relaxed">Three simple steps to transform how your firm handles compliance research.</p>
             </div>
             
@@ -342,7 +344,7 @@
                             <line x1="12" y1="3" x2="12" y2="15"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Upload</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Upload</h3>
                     <p class="text-earth-muted leading-relaxed">Drag and drop documents or connect to regulatory feeds</p>
                 </div>
                 
@@ -358,7 +360,7 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Query</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Query</h3>
                     <p class="text-earth-muted leading-relaxed">Ask questions in natural language</p>
                 </div>
                 
@@ -373,7 +375,7 @@
                             <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-earth mb-3">Act</h3>
+                    <h3 class="font-display text-xl font-bold text-earth mb-3">Act</h3>
                     <p class="text-earth-muted leading-relaxed">Get cited answers, share findings, track compliance</p>
                 </div>
             </div>
@@ -385,21 +387,21 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Traction</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Indian BFSI, by People Who Understand It</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Built for Indian BFSI, by People Who Understand It</h2>
                 <p class="text-lg text-earth-muted leading-relaxed">We're building in public. Here's where we are today.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6 mb-16">
                 <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2">500+</div>
+                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">500+</div>
                     <div class="text-earth-muted font-medium">regulatory document chunks indexed</div>
                 </div>
                 <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2">&lt;2s</div>
+                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">&lt;2s</div>
                     <div class="text-earth-muted font-medium">RAG query response time</div>
                 </div>
                 <div class="p-10 rounded-3xl clay text-center hover:-translate-y-2 transition-all">
-                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2">5</div>
+                    <div class="text-5xl font-extrabold bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent mb-2 font-display">5</div>
                     <div class="text-earth-muted font-medium">pilot conversations with boutique consultancies</div>
                 </div>
             </div>
@@ -419,7 +421,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="inline-block px-5 py-2 rounded-full bg-terracotta-soft text-terracotta-dark text-sm font-semibold uppercase tracking-wider mb-4">Security</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Enterprise-Grade from Day One</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">Enterprise-Grade from Day One</h2>
                 <p class="text-lg text-earth-muted leading-relaxed">Security and compliance aren't afterthoughts. They're built into our architecture.</p>
             </div>
             
@@ -431,7 +433,7 @@
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                     </div>
-                    <h3 class="text-base font-bold text-earth mb-2">Data Residency</h3>
+                    <h3 class="font-display text-base font-bold text-earth mb-2">Data Residency</h3>
                     <p class="text-sm text-earth-muted leading-relaxed">Everything stays in India (AWS ap-south-1)</p>
                 </div>
                 
@@ -441,7 +443,7 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3 class="text-base font-bold text-earth mb-2">SOC2-Ready</h3>
+                    <h3 class="font-display text-base font-bold text-earth mb-2">SOC2-Ready</h3>
                     <p class="text-sm text-earth-muted leading-relaxed">Encryption at rest and in transit</p>
                 </div>
                 
@@ -453,7 +455,7 @@
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                         </svg>
                     </div>
-                    <h3 class="text-base font-bold text-earth mb-2">Row-Level Security</h3>
+                    <h3 class="font-display text-base font-bold text-earth mb-2">Row-Level Security</h3>
                     <p class="text-sm text-earth-muted leading-relaxed">Multi-tenant, client data isolated</p>
                 </div>
                 
@@ -464,7 +466,7 @@
                             <polyline points="8,6 2,12 8,18"/>
                         </svg>
                     </div>
-                    <h3 class="text-base font-bold text-earth mb-2">Open-Core</h3>
+                    <h3 class="font-display text-base font-bold text-earth mb-2">Open-Core</h3>
                     <p class="text-sm text-earth-muted leading-relaxed">No vendor lock-in, audit the code</p>
                 </div>
             </div>
@@ -479,7 +481,7 @@
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div class="pt-4">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">See Atlas in Action</h2>
+                    <h2 class="font-display text-4xl md:text-5xl font-extrabold text-earth mb-4 tracking-tight">See Atlas in Action</h2>
                     <p class="text-lg text-earth-muted mb-8 leading-relaxed">Request a personalized demo for your firm</p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-3 text-earth-light">
@@ -537,7 +539,7 @@
                                 <polyline points="22,4 12,14.01 9,11.01"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-earth mb-3">Thank You!</h3>
+                        <h3 class="font-display text-2xl font-extrabold text-earth mb-3">Thank You!</h3>
                         <p class="text-earth-muted">We've received your demo request and will be in touch within 24 hours.</p>
                     </div>
                 </div>
@@ -552,7 +554,7 @@
                 <div class="max-w-xs">
                     <a href="#" class="flex items-center gap-2 mb-3">
                         <div class="w-7 h-7 rounded-full bg-gradient-to-br from-terracotta-light to-terracotta shadow-lg"></div>
-                        <span class="text-xl font-bold text-clay-100 tracking-tight">Craton</span>
+                        <span class="text-xl font-bold text-clay-100 tracking-tight font-display">Craton</span>
                     </a>
                     <p class="text-sm text-clay-400 leading-relaxed">Compliance-Ready AI for BFSI Professional Services</p>
                 </div>
