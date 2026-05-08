@@ -142,7 +142,8 @@
                 </div>
                 <div class="p-8 md:p-10">
                     <p class="font-display text-5xl font-bold text-ink mb-2">₹6L/yr</p>
-                    <p class="text-sm text-ink-light leading-relaxed">per consultant in lost revenue from non-billable preparatory research.</p>
+                    <p class="text-sm text-ink-light leading-relaxed">per consultant in unbilled research time.<sup class="text-xs text-ink-muted ml-1">1</sup></p>
+                    <p class="text-xs text-ink-muted mt-3 pt-3 border-t border-ink/10">¹ Based on 40% of a ₹15L average senior consultant salary.</p>
                 </div>
             </div>
         </div>
@@ -258,18 +259,18 @@
             <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ink/10">
                 <div class="p-8 md:p-12">
                     <div class="font-display text-5xl font-bold text-terracotta mb-6">1.0</div>
-                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Ingest</h3>
-                    <p class="text-ink-muted leading-relaxed">Upload every document your firm has ever received — RBI circulars, NBFC filings, KYC packets, compliance checklists. Atlas indexes them all. Every word becomes searchable.</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Your 500-page backlog, searchable in one go.</h3>
+                    <p class="text-ink-muted leading-relaxed">Upload everything your firm has — RBI circulars, NBFC filings, KYC packets. Atlas indexes every word. No re-uploading. No Ctrl+F.</p>
                 </div>
                 <div class="p-8 md:p-12">
                     <div class="font-display text-5xl font-bold text-terracotta mb-6">2.0</div>
-                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Ask</h3>
-                    <p class="text-ink-muted leading-relaxed">"What's the new CAR threshold?" Atlas finds the exact section, paragraph, and source — not a list of documents, but the answer. Every response cites where it came from.</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Get the answer. Not a list of documents.</h3>
+                    <p class="text-ink-muted leading-relaxed">"What's the new CAR threshold?" Atlas finds the exact section and paragraph — and tells you which document it came from.</p>
                 </div>
                 <div class="p-8 md:p-12">
                     <div class="font-display text-5xl font-bold text-terracotta mb-6">3.0</div>
-                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Act</h3>
-                    <p class="text-ink-muted leading-relaxed">Export audit logs for regulators. Share findings with your team. Compass monitors RBI, SEBI, IRDAI daily — so the next time a circular drops, you see it before your client does.</p>
+                    <h3 class="font-display text-2xl font-bold text-ink mb-3">Share findings. Never miss a circular again.</h3>
+                    <p class="text-ink-muted leading-relaxed">Export audit logs for regulators. Compass monitors RBI, SEBI, IRDAI daily — so you see the next change before your client does.</p>
                 </div>
             </div>
         </div>
@@ -366,8 +367,8 @@
                     <p class="text-sm text-ink-muted">Multi-tenant architecture. Client data is isolated by design.</p>
                 </div>
                 <div class="p-8 md:p-10 hover:bg-sand/50 transition-colors">
-                    <p class="font-sans text-sm font-bold text-ink mb-2">Open-Core</p>
-                    <p class="text-sm text-ink-muted">No vendor lock-in. The engine is open-source. You can audit the code.</p>
+                    <p class="font-sans text-sm font-bold text-ink mb-2">DPDP Act Compliant</p>
+                    <p class="text-sm text-ink-muted">Built in line with India's Digital Personal Data Protection Act 2023. Defined retention periods. No data processed beyond stated purpose.</p>
                 </div>
             </div>
         </div>
@@ -390,10 +391,37 @@
                         Try Atlas with your documents for 30 days. No cost, no commitment.
                     </p>
                     <div class="space-y-4">
-                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> Custom setup for your document types</p>
-                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> 30-day pilot at no cost</p>
-                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> No commitment required</p>
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> Upload your own documents</p>
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> Query them in plain English</p>
+                        <p class="text-ink"><span class="text-terracotta mr-2">→</span> See cited answers in 15 seconds</p>
                     </div>
+                </div>
+                
+                <div class="p-8 md:p-12">
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Name</label>
+                            <input type="text" name="name" required placeholder="Your name" class="w-full px-4 py-3 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Firm</label>
+                            <input type="text" name="firm" required placeholder="Your firm name" class="w-full px-4 py-3 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-ink-muted mb-2">Use Case</label>
+                            <input type="text" name="usecase" required placeholder="e.g. Regulatory tracking for 3 NBFC clients" class="w-full px-4 py-3 bg-paper border border-ink/15 text-ink placeholder-ink-muted/40 focus:outline-none focus:border-terracotta transition-colors">
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 text-sm font-bold uppercase tracking-widest text-white bg-terracotta hover:bg-terracotta-dark transition-colors">
+                            Request 30-Day Pilot
+                        </button>
+                        <p class="text-xs text-ink-muted text-center">Or email us at <a href="mailto:hello@craton-labs.com" class="text-terracotta hover:text-terracotta-dark">hello@craton-labs.com</a></p>
+                    </form>
+                    <div id="formSuccess" class="hidden text-center py-12">
+                        <p class="font-display text-2xl font-bold text-ink mb-2">Thank You</p>
+                        <p class="text-ink-muted">We'll be in touch within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
                 </div>
                 
                 <div class="p-8 md:p-12">
